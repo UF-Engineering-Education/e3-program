@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Faculty Mentors | E&sup3; Fellows, University of Florida</title>
+<meta name="description" content="The faculty mentors of the E3 Fellows Program at the University of Florida Herbert Wertheim College of Engineering, and what the mentoring relationship involves.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/style.css">
+<script>document.documentElement.classList.add("js");</script>
+</head>
+<body>
+
+<a class="skip-link" href="#main">Skip to main content</a>
+
+<div class="topbar">
+  <div class="wrap">
+    <span><a href="https://www.eng.ufl.edu/" target="_blank" rel="noopener">Herbert Wertheim College of Engineering</a></span>
+    <span class="topbar__right">Inaugural Cohort &middot; 2026&ndash;27</span>
+  </div>
+</div>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="index.html">
+      <span class="brand__mark" aria-hidden="true">E<sup>3</sup></span>
+      <span class="brand__text">
+        <span class="brand__title">E<sup>3</sup> Fellows Program</span>
+        <span class="brand__sub">Department of Engineering Education &middot; UF</span>
+      </span>
+    </a>
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="primary-nav">
+      <span class="nav-toggle__bars" aria-hidden="true"><span></span><span></span><span></span></span>
+      Menu
+    </button>
+    <nav class="nav" id="primary-nav" aria-label="Primary">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="program.html">Program</a></li>
+        <li><a href="timeline.html">Timeline</a></li>
+        <li><a href="fellows.html">Fellows</a></li>
+        <li><a href="mentors.html" aria-current="page">Mentors</a></li>
+        <li><a href="outcomes.html">Outcomes</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+
+  <section class="hero hero--page">
+    <div class="hero__grid-lines" aria-hidden="true"></div>
+    <div class="wrap">
+      <ol class="breadcrumb">
+        <li><a href="index.html">Home</a></li>
+        <li>Faculty mentors</li>
+      </ol>
+      <h1>Faculty mentors</h1>
+      <p class="lede">
+        Every E<sup>3</sup> Fellow is paired with an experienced faculty mentor who
+        guides them through the full nine months &mdash; from course planning to
+        the culminating scholarly teaching contribution.
+      </p>
+    </div>
+  </section>
+
+  <!-- ======================== THE MENTOR ROLE ====================== -->
+  <section class="section">
+    <div class="wrap split">
+      <div class="reveal">
+        <p class="eyebrow">The role</p>
+        <h2>Individualized guidance, all year long.</h2>
+        <p>
+          Mentors meet <strong>biweekly</strong> with their fellow in preparation
+          for and through the semester &mdash; discussing teaching challenges,
+          classroom observations, professional growth, and career development
+          &mdash; followed by <strong>monthly check-ins</strong>.
+        </p>
+        <p>
+          They also provide feedback on fellows&rsquo; instructional innovations and
+          scholarly teaching projects, fostering reflective practice and continuous
+          improvement. At the end of the year, mentors join the Department or Unit
+          Chair in a final structured evaluation of the fellow&rsquo;s overall
+          growth and readiness as an engineering educator.
+        </p>
+        <p><a class="arrow-link" href="program.html#mentorship">Read the mentorship component</a></p>
+      </div>
+
+      <div class="card card--accent reveal">
+        <h3>What mentorship covers</h3>
+        <ul class="checklist">
+          <li>Course planning and syllabus design</li>
+          <li>Classroom observation and instructional feedback</li>
+          <li>Assessment strategy and student engagement</li>
+          <li>Professional growth and career development</li>
+          <li>Instructional innovation and SoTL project guidance</li>
+          <li>Joint summative evaluation with the Department or Unit Chair</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================== CADENCE ============================ -->
+  <section class="section section--alt">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <p class="eyebrow">Cadence</p>
+        <h2>How the mentoring year runs</h2>
+      </div>
+      <div class="grid grid--3">
+        <article class="card reveal">
+          <h3>Before the semester</h3>
+          <p>Biweekly meetings begin ahead of Fall 2026, focused on course planning
+            and preparation for the first teaching appointment.</p>
+        </article>
+        <article class="card reveal">
+          <h3>Through the semester</h3>
+          <p>Biweekly meetings continue alongside classroom observation and
+            formative feedback on instruction, assessment, and engagement.</p>
+        </article>
+        <article class="card reveal">
+          <h3>Into the spring</h3>
+          <p>Monthly check-ins support the two-course load and the implementation
+            and evaluation of the instructional innovation.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================== MENTORS =========================== -->
+  <section class="section">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <p class="eyebrow">Meet the mentors</p>
+        <h2>2026&ndash;27 faculty mentors</h2>
+      </div>
+
+      <div class="filters" id="mentor-filters" role="group" aria-label="Filter mentors by department"></div>
+
+      <p class="small muted" id="mentors-status" role="status" aria-live="polite"></p>
+
+      <ul class="fellows-grid" id="mentors-grid">
+        <li><p class="muted">Mentor profiles require JavaScript to display.</p></li>
+      </ul>
+
+      <noscript>
+        <p class="placeholder-note" style="margin-top:1.5rem">
+          <span>Mentor profiles are rendered from a data file and need JavaScript
+          enabled. Each of the ten fellows in the inaugural cohort is paired with
+          one experienced faculty mentor.</span>
+        </p>
+      </noscript>
+
+      <p class="placeholder-note" style="margin-top:2rem">
+        <span><strong>Profiles in progress.</strong> Mentor names, headshots, and
+        biographies are being finalized and will be published here ahead of the
+        Fall 2026 semester.</span>
+      </p>
+    </div>
+  </section>
+
+  <!-- ====================== BECOME A MENTOR ======================== -->
+  <section class="section section--ink">
+    <div class="wrap wrap--narrow center">
+      <p class="eyebrow" style="justify-content:center">Get involved</p>
+      <h2>Interested in mentoring a fellow?</h2>
+      <p class="lede">
+        Experienced faculty across the
+        <a href="https://www.eng.ufl.edu/" target="_blank" rel="noopener">Herbert Wertheim College of Engineering</a>
+        are invited to mentor an E<sup>3</sup> Fellow. Reach out to the
+        <a href="https://eed.eng.ufl.edu/" target="_blank" rel="noopener">Department of Engineering Education</a>
+        to learn what the commitment involves.
+      </p>
+      <div class="btn-row" style="justify-content:center">
+        <a class="btn btn--primary" href="contact.html">Contact the program</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap footer-grid">
+    <div>
+      <p class="footer-brand">E<sup>3</sup> Fellows Program</p>
+      <p>
+        Visiting Assistant Professor Program in Engineering Education.
+        <a href="https://eed.eng.ufl.edu/" target="_blank" rel="noopener">Department of Engineering Education</a>,
+        <a href="https://www.eng.ufl.edu/" target="_blank" rel="noopener">Herbert Wertheim College of Engineering</a>,
+        University of Florida.
+      </p>
+    </div>
+    <div>
+      <h4>Explore</h4>
+      <ul>
+        <li><a href="program.html">Program</a></li>
+        <li><a href="timeline.html">Timeline &amp; activities</a></li>
+        <li><a href="fellows.html">Fellows</a></li>
+        <li><a href="mentors.html">Faculty mentors</a></li>
+        <li><a href="outcomes.html">Outcomes</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Department</h4>
+      <ul>
+        <li><a href="https://eed.eng.ufl.edu/" target="_blank" rel="noopener">Department of Engineering Education</a></li>
+        <li><a href="https://www.eng.ufl.edu/" target="_blank" rel="noopener">Herbert Wertheim College of Engineering</a></li>
+        <li>University of Florida<br>Gainesville, FL 32611</li>
+      </ul>
+    </div>
+  </div>
+  <div class="wrap footer-bottom">
+    <span>&copy; <span data-year>2026</span> University of Florida</span>
+    <span>An Equal Opportunity Institution</span>
+  </div>
+</footer>
+
+<script src="assets/js/main.js"></script>
+<script src="assets/js/people.js"></script>
+<script src="assets/js/mentors-data.js"></script>
+<script>
+E3People.render({
+  grid: "mentors-grid",
+  filters: "mentor-filters",
+  status: "mentors-status",
+  people: window.E3_MENTORS,
+  singular: "mentor",
+  plural: "mentors",
+  allLabel: "All mentors",
+  tba: "Mentor to be announced",
+  cohortLabel: "paired with the inaugural cohort"
+});
+</script>
+</body>
+</html>
