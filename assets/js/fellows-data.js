@@ -35,13 +35,6 @@ window.E3_FELLOWS = [
   },
   {
     name: "",
-    dept: "Engineering Education",
-    photo: "",
-    bio: "",
-    links: []
-  },
-  {
-    name: "",
     dept: "Chemical Engineering",
     photo: "",
     bio: "",
@@ -50,6 +43,13 @@ window.E3_FELLOWS = [
   {
     name: "",
     dept: "Chemical Engineering",
+    photo: "",
+    bio: "",
+    links: []
+  },
+  {
+    name: "",
+    dept: "Biomedical Engineering",
     photo: "",
     bio: "",
     links: []

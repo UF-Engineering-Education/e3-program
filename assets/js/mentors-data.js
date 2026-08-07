@@ -20,9 +20,9 @@
 
 window.E3_MENTORS = [
   { name: "", dept: "Engineering Education", role: "", photo: "", bio: "", links: [] },
-  { name: "", dept: "Engineering Education", role: "", photo: "", bio: "", links: [] },
   { name: "", dept: "Chemical Engineering", role: "", photo: "", bio: "", links: [] },
   { name: "", dept: "Chemical Engineering", role: "", photo: "", bio: "", links: [] },
+  { name: "", dept: "Biomedical Engineering", role: "", photo: "", bio: "", links: [] },
   { name: "", dept: "Biomedical Engineering", role: "", photo: "", bio: "", links: [] },
   { name: "", dept: "Biomedical Engineering", role: "", photo: "", bio: "", links: [] },
   { name: "", dept: "Materials Science & Engineering", role: "", photo: "", bio: "", links: [] },
