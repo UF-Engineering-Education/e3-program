@@ -41,6 +41,60 @@
   var year = document.querySelector("[data-year]");
   if (year) year.textContent = String(new Date().getFullYear());
 
+  /* ---- Dismissible floating call-out ------------------------------------ */
+  var callout = document.querySelector("[data-callout-id]");
+
+  if (callout) {
+    var STORE_KEY = "e3-callout-dismissed";
+    var calloutId = callout.getAttribute("data-callout-id");
+
+    // Storage throws in private mode and when cookies are blocked; a failure
+    // to remember the dismissal should never stop the notice working.
+    var readStore = function () {
+      try {
+        return window.localStorage.getItem(STORE_KEY);
+      } catch (err) {
+        return null;
+      }
+    };
+
+    var hideCallout = function (remember) {
+      callout.classList.remove("is-visible");
+      callout.hidden = true;
+      if (!remember) return;
+      try {
+        window.localStorage.setItem(STORE_KEY, calloutId);
+      } catch (err) {
+        /* dismissal simply won't persist */
+      }
+    };
+
+    if (readStore() !== calloutId) {
+      // Let the page settle before sliding the notice in.
+      window.setTimeout(function () {
+        callout.hidden = false;
+        // Two frames: the first commits the un-hidden starting state, the
+        // second flips the class so the transition actually runs.
+        window.requestAnimationFrame(function () {
+          window.requestAnimationFrame(function () {
+            callout.classList.add("is-visible");
+          });
+        });
+      }, 900);
+    }
+
+    var closeBtn = callout.querySelector("[data-callout-close]");
+    if (closeBtn) {
+      closeBtn.addEventListener("click", function () {
+        hideCallout(true);
+      });
+    }
+
+    document.addEventListener("keydown", function (e) {
+      if (e.key === "Escape" && !callout.hidden) hideCallout(true);
+    });
+  }
+
   /* ---- Scroll reveal ----------------------------------------------------- */
   var targets = document.querySelectorAll(".reveal");
   if (!targets.length) return;

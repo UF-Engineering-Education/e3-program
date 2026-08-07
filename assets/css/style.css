@@ -1273,6 +1273,84 @@ a[target="_blank"]::after {
 }
 .cta h2 { color: #fff; }
 .cta .btn-row { justify-content: center; }
+/* .lede and .eyebrow set their own dark colours, which would win over the
+   band's inherited light text. */
+.cta .lede { color: rgba(255, 255, 255, 0.85); }
+.cta .eyebrow { color: #ffb59b; }
+.cta .chips { justify-content: center; }
+
+/* Floating call-out — a dismissible notice pinned to the bottom-right.
+   Sits above the sticky header (z-index 50) but below the skip link (999). */
+.callout-toast {
+  position: fixed;
+  right: clamp(0.75rem, 2vw, 1.5rem);
+  bottom: clamp(0.75rem, 2vw, 1.5rem);
+  z-index: 80;
+  width: min(350px, calc(100vw - 1.5rem));
+  padding: 1.2rem 1.3rem 1.3rem;
+  background: #fff;
+  border: 1px solid var(--line);
+  border-top: 4px solid var(--uf-orange);
+  border-radius: var(--r-md);
+  box-shadow: var(--shadow-md);
+  opacity: 0;
+  transform: translateY(12px);
+  transition: opacity 0.35s ease, transform 0.35s ease;
+}
+.callout-toast.is-visible { opacity: 1; transform: none; }
+.callout-toast[hidden] { display: none; }
+.callout-toast .eyebrow { margin-bottom: 0.55rem; font-size: 0.72rem; }
+.callout-toast h2 {
+  margin: 0 0 0.4rem;
+  font-size: var(--step-1);
+  line-height: 1.25;
+}
+.callout-toast p {
+  margin: 0;
+  font-size: 0.88rem;
+  line-height: 1.5;
+  color: var(--ink-2);
+}
+.callout-toast .chips { margin-top: 0.85rem; }
+.callout-toast .btn-row { margin-top: 1rem; gap: 0.6rem; }
+.callout-toast .btn { padding: 0.6rem 1.15rem; font-size: 0.9rem; }
+
+.callout-toast__close {
+  position: absolute;
+  top: 0.55rem;
+  right: 0.55rem;
+  display: grid;
+  place-items: center;
+  width: 30px;
+  height: 30px;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  background: transparent;
+  color: var(--ink-3);
+  font: inherit;
+  line-height: 1;
+  cursor: pointer;
+  transition: background-color 0.15s, color 0.15s;
+}
+.callout-toast__close:hover {
+  background: var(--surface-3);
+  color: var(--ink);
+}
+.callout-toast__close svg { width: 16px; height: 16px; }
+/* Keep the heading clear of the absolutely-positioned close button. */
+.callout-toast .eyebrow,
+.callout-toast h2 { padding-right: 1.75rem; }
+
+@media (prefers-reduced-motion: reduce) {
+  .callout-toast { opacity: 1; transform: none; transition: none; }
+}
+
+@media (max-width: 480px) {
+  .callout-toast { width: calc(100vw - 1.5rem); }
+  .callout-toast .btn-row { flex-direction: column; align-items: stretch; }
+  .callout-toast .btn { justify-content: center; }
+}
 
 /* --------------------------------------------------------------------------
    13. Footer
@@ -1363,7 +1441,8 @@ a[target="_blank"]::after {
    15. Print
    -------------------------------------------------------------------------- */
 @media print {
-  .site-header, .topbar, .site-footer, .cta, .btn-row, .filters { display: none; }
+  .site-header, .topbar, .site-footer, .cta, .btn-row, .filters,
+  .callout-toast { display: none; }
   .hero { background: none; color: #000; }
   .hero h1, .hero .lede { color: #000; }
   body { color: #000; }
