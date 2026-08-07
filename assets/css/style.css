@@ -764,6 +764,52 @@ a[target="_blank"]::after {
 }
 .callout p:last-child { margin-bottom: 0; }
 
+/* Fact chips — logistics at a glance (dates, location, deadlines) */
+.chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+  list-style: none;
+  margin: 1rem 0 0;
+  padding: 0;
+}
+.chips > li { margin: 0; }
+/* inline-block, not flex: the label must stay on the same line as the value
+   and let the value wrap under it, rather than becoming its own flex line. */
+.chip {
+  display: inline-block;
+  padding: 0.3rem 0.7rem;
+  border: 1px solid var(--line-strong);
+  border-radius: 999px;
+  background: var(--surface);
+  color: var(--ink-2);
+  font-size: 0.8rem;
+  line-height: 1.45;
+}
+.chip__label {
+  margin-right: 0.35rem;
+  color: var(--uf-blue);
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+.chip--deadline {
+  border-color: #f6c9b4;
+  background: #fff3e9;
+  color: var(--uf-orange-ink);
+  font-weight: 600;
+}
+.chip--deadline .chip__label { color: var(--uf-orange-ink); }
+/* Value not yet published by the host program */
+.chip--tba {
+  border-style: dashed;
+  background: var(--surface-2);
+  color: var(--ink-3);
+  font-style: italic;
+}
+
 /* Definition rows */
 .deflist { display: grid; gap: 0; margin: 0; }
 .deflist > div {
