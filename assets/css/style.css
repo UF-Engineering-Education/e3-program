@@ -1231,6 +1231,31 @@ a[target="_blank"]::after {
   padding: 0 2rem 1.9rem;
   overflow-y: auto;
   scrollbar-gutter: stable;
+  /* Standard properties — Firefox, and Chromium 121+. */
+  scrollbar-width: thin;
+  scrollbar-color: var(--line-strong) transparent;
+}
+/* WebKit equivalent for Safari and older Chromium. The thumb is drawn inside
+   a transparent border via background-clip, which insets it from the track
+   edge — a slim rounded bar rather than a full-width grey slab. */
+.person-dialog__body::-webkit-scrollbar { width: 11px; }
+.person-dialog__body::-webkit-scrollbar-track { background: transparent; }
+/* Drop the stepper arrows at each end of the track. */
+.person-dialog__body::-webkit-scrollbar-button {
+  display: none;
+  width: 0;
+  height: 0;
+}
+.person-dialog__body::-webkit-scrollbar-corner { background: transparent; }
+.person-dialog__body::-webkit-scrollbar-thumb {
+  background: var(--line-strong);
+  border: 3px solid transparent;
+  background-clip: content-box;
+  border-radius: 999px;
+}
+.person-dialog__body::-webkit-scrollbar-thumb:hover {
+  background: var(--ink-3);
+  background-clip: content-box;
 }
 @media (max-width: 700px) {
   .person-dialog__body {
