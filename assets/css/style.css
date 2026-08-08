@@ -1147,6 +1147,147 @@ a[target="_blank"]::after {
 }
 .fellow--tba .fellow__name { color: var(--ink-3); font-style: italic; }
 
+/* Expandable card -------------------------------------------------------- */
+.u-visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+.fellow--expandable { position: relative; cursor: pointer; }
+/* The button is the only focusable control, stretched over the whole card so
+   a click anywhere opens the dialog while keyboard users still get one stop. */
+.fellow__more {
+  position: static;
+  margin-top: auto;
+  padding: 0.9rem 0 0;
+  border: 0;
+  background: none;
+  font: inherit;
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--uf-blue);
+  text-align: left;
+  cursor: pointer;
+}
+.fellow__more::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: var(--r-lg);
+}
+.fellow--expandable:hover .fellow__more { color: var(--uf-orange-ink); }
+.fellow__more:focus-visible { outline: none; }
+.fellow__more:focus-visible::after {
+  outline: 3px solid var(--uf-orange);
+  outline-offset: 3px;
+}
+/* Links inside the card must stay clickable above the button's overlay. */
+.fellow--expandable .fellow__links { position: relative; z-index: 1; }
+
+/* Full-bio dialog -------------------------------------------------------- */
+.person-dialog {
+  width: min(860px, calc(100vw - 2rem));
+  max-height: min(85vh, 46rem);
+  /* Top strip reserves room for the close button, so the scrolling body
+     starts below it and its scrollbar never runs under the button. */
+  padding: 2.9rem 0 0;
+  border: 0;
+  border-radius: var(--r-lg);
+  background: #fff;
+  color: var(--ink-2);
+  box-shadow: var(--shadow-md);
+  overflow: hidden;
+}
+/* Guarded on [open]: a bare display value would override the UA's
+   `dialog:not([open]) { display: none }` and leave the dialog on screen. */
+.person-dialog[open] {
+  display: flex;
+  flex-direction: column;
+}
+.person-dialog::backdrop {
+  background: rgba(0, 16, 87, 0.55);
+  backdrop-filter: blur(2px);
+}
+.person-dialog__body {
+  display: grid;
+  grid-template-columns: 240px 1fr;
+  align-content: start;
+  gap: 2rem;
+  /* min-height:0 lets the flex item shrink so the body — not the dialog —
+     is what scrolls. */
+  flex: 1;
+  min-height: 0;
+  padding: 0 2rem 1.9rem;
+  overflow-y: auto;
+  scrollbar-gutter: stable;
+}
+@media (max-width: 700px) {
+  .person-dialog__body {
+    grid-template-columns: 1fr;
+    gap: 1.2rem;
+    padding: 0 1.35rem 1.5rem;
+  }
+  .person-dialog__photo { max-width: 170px; }
+}
+.person-dialog__photo {
+  aspect-ratio: 1 / 1;
+  border-radius: var(--r-md);
+  overflow: hidden;
+  background: var(--surface-3);
+}
+.person-dialog__photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 22%;
+}
+.person-dialog__name {
+  margin: 0 0 0.3rem;
+  font-size: var(--step-2);
+  line-height: 1.2;
+  color: var(--ink);
+}
+.person-dialog__dept {
+  margin: 0;
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  color: var(--uf-orange-ink);
+}
+.person-dialog__role {
+  margin: 0.15rem 0 0;
+  font-weight: 600;
+  color: var(--ink-3);
+}
+/* Bio paragraphs only — the dept/role lines carry classes and keep their own
+   tighter spacing, which a bare `__text p` rule would outrank. */
+.person-dialog__text > p:not([class]) { margin: 0.9rem 0 0; }
+.person-dialog__close {
+  position: absolute;
+  top: 0.75rem;
+  right: 0.9rem;
+  z-index: 1;
+  display: grid;
+  place-items: center;
+  width: 34px;
+  height: 34px;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  background: var(--surface-2);
+  color: var(--ink-2);
+  cursor: pointer;
+  transition: background-color 0.15s, color 0.15s;
+}
+.person-dialog__close:hover { background: var(--surface-3); color: var(--ink); }
+.person-dialog__close svg { width: 17px; height: 17px; }
+
 /* One row on desktop whatever the department count — auto-flow: column beats
    auto-fit here, which wrapped six units to 5 + 1. Falls back to a wrapping
    grid below 1000px, where six columns would be unreadable. */

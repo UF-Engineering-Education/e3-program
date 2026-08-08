@@ -91,10 +91,77 @@ window.E3People = (function () {
       });
     }
 
+    /* ---- Full-bio dialog -------------------------------------------------
+       Native <dialog> gives us the backdrop, Escape-to-close and focus
+       trapping for free. Browsers without showModal() simply never get a
+       clickable card, and the short bio on the card still reads fine. */
+    var supportsDialog = typeof HTMLDialogElement === "function" &&
+      typeof document.createElement("dialog").showModal === "function";
+    var dialog = null;
+
+    function ensureDialog() {
+      if (dialog) return dialog;
+      dialog = document.createElement("dialog");
+      dialog.className = "person-dialog";
+      dialog.innerHTML =
+        '<button type="button" class="person-dialog__close" aria-label="Close">' +
+        '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" ' +
+        'stroke-width="2.2" stroke-linecap="round" aria-hidden="true">' +
+        '<path d="M18 6 6 18M6 6l12 12"/></svg></button>' +
+        '<div class="person-dialog__body"></div>';
+      document.body.appendChild(dialog);
+
+      dialog.querySelector(".person-dialog__close")
+        .addEventListener("click", function () {
+          dialog.close();
+        });
+
+      // A click on the backdrop lands on the dialog element itself.
+      dialog.addEventListener("click", function (e) {
+        if (e.target === dialog) dialog.close();
+      });
+
+      return dialog;
+    }
+
+    function openDialog(person) {
+      var d = ensureDialog();
+      var paras = person.bioFull;
+      if (typeof paras === "string") paras = [paras];
+
+      var photo = person.photo
+        ? '<div class="person-dialog__photo"><img src="' + esc(person.photo) +
+          '" alt="Headshot of ' + esc(person.name || singular) + '"></div>'
+        : "";
+
+      var links = (person.links || [])
+        .filter(function (l) { return l && l.url && l.label; })
+        .map(function (l) {
+          return '<a href="' + esc(l.url) + '" target="_blank" rel="noopener">' +
+            esc(l.label) + "</a>";
+        })
+        .join("");
+
+      d.querySelector(".person-dialog__body").innerHTML =
+        photo +
+        '<div class="person-dialog__text">' +
+        '<h2 class="person-dialog__name">' + esc(person.name) + "</h2>" +
+        '<p class="person-dialog__dept">' + esc(person.dept) + "</p>" +
+        (person.role
+          ? '<p class="person-dialog__role">' + esc(person.role) + "</p>"
+          : "") +
+        paras.map(function (p) { return "<p>" + esc(p) + "</p>"; }).join("") +
+        (links ? '<p class="fellow__links">' + links + "</p>" : "") +
+        "</div>";
+
+      d.showModal();
+    }
+
     /* ---- Card markup ---- */
-    function card(person) {
+    function card(person, index) {
       var named = Boolean(person.name && person.name.trim());
       var displayName = named ? esc(person.name) : esc(tba);
+      var expandable = Boolean(named && person.bioFull && supportsDialog);
 
       var photo = person.photo
         ? '<img src="' +
@@ -129,11 +196,21 @@ window.E3People = (function () {
         })
         .join("");
 
+      // The button is the real control: it carries the accessible name and
+      // keyboard focus. CSS stretches it over the whole card so a click
+      // anywhere opens the dialog.
+      var more = expandable
+        ? '<button type="button" class="fellow__more" data-person="' + index +
+          '">Read full bio<span class="u-visually-hidden"> of ' +
+          displayName + "</span></button>"
+        : "";
+
       return (
         '<li data-dept="' +
         esc(person.dept) +
         '"><article class="fellow' +
         (named ? "" : " fellow--tba") +
+        (expandable ? " fellow--expandable" : "") +
         '"><div class="fellow__photo">' +
         photo +
         '</div><div class="fellow__body">' +
@@ -146,9 +223,17 @@ window.E3People = (function () {
         role +
         bio +
         (links ? '<p class="fellow__links">' + links + "</p>" : "") +
+        more +
         "</div></article></li>"
       );
     }
+
+    grid.addEventListener("click", function (e) {
+      var btn = e.target.closest(".fellow__more");
+      if (!btn) return;
+      var person = people[Number(btn.dataset.person)];
+      if (person) openDialog(person);
+    });
 
     /* ---- Paint ---- */
     function paint(dept) {
@@ -159,7 +244,13 @@ window.E3People = (function () {
               return p.dept === dept;
             });
 
-      grid.innerHTML = list.map(card).join("");
+      // Index against `people`, not the filtered list, so the dialog still
+      // resolves the right person when a department filter is active.
+      grid.innerHTML = list
+        .map(function (p) {
+          return card(p, people.indexOf(p));
+        })
+        .join("");
 
       if (status) {
         status.textContent =
