@@ -1123,12 +1123,17 @@ a[target="_blank"]::after {
   color: var(--uf-orange-ink);
   line-height: 1.3;
 }
+/* Badge rather than plain text so the appointment title reads as a distinct
+   fact, not a third line of grey prose. align-self keeps it hugging its text
+   inside the flex column; the modest radius survives wrapping to two lines,
+   which a full pill at this text length would not. */
 .fellow__role {
-  font-size: 0.86rem;
-  font-weight: 600;
-  color: var(--ink-3);
-  line-height: 1.35;
   margin: 0;
+  border-radius: var(--r-sm);
+  color: var(--uf-blue);
+  font-size: 0.86rem;
+  font-weight: 700;
+  line-height: 1.35;
 }
 .fellow__bio {
   font-size: 0.9rem;
