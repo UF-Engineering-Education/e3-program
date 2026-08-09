@@ -1219,11 +1219,15 @@ a[target="_blank"]::after {
   background: rgba(0, 16, 87, 0.55);
   backdrop-filter: blur(2px);
 }
+/* Flex-wrap, not a grid + breakpoint. The photo and text sit side by side
+   while they fit and the text drops below when they don't — driven by the
+   dialog's own width, so it is correct at every size without a media query.
+   Flex items are also incapable of overlapping one another. */
 .person-dialog__body {
-  display: grid;
-  grid-template-columns: 240px 1fr;
-  align-content: start;
-  gap: 2rem;
+  display: flex;
+  flex-wrap: wrap;
+  align-content: flex-start;
+  gap: 1.5rem 2rem;
   /* min-height:0 lets the flex item shrink so the body — not the dialog —
      is what scrolls. */
   flex: 1;
@@ -1257,19 +1261,25 @@ a[target="_blank"]::after {
   background: var(--ink-3);
   background-clip: content-box;
 }
-@media (max-width: 700px) {
-  .person-dialog__body {
-    grid-template-columns: 1fr;
-    gap: 1.2rem;
-    padding: 0 1.35rem 1.5rem;
-  }
-  .person-dialog__photo { max-width: 170px; }
-}
 .person-dialog__photo {
+  /* Never grows or shrinks below its own size; the 45% cap is what makes it
+     shrink sensibly once it has wrapped onto its own line. */
+  flex: 0 0 auto;
+  width: 240px;
+  max-width: 45%;
   aspect-ratio: 1 / 1;
   border-radius: var(--r-md);
   overflow: hidden;
   background: var(--surface-3);
+}
+/* The 260px basis is the wrap trigger: when the photo and this basis no
+   longer fit on one line, the text wraps beneath. min-width:0 defeats the
+   automatic min-content floor so a long word cannot widen the flex item
+   past the dialog. */
+.person-dialog__text {
+  flex: 1 1 260px;
+  min-width: 0;
+  overflow-wrap: break-word;
 }
 .person-dialog__photo img {
   width: 100%;
@@ -1317,6 +1327,17 @@ a[target="_blank"]::after {
 }
 .person-dialog__close:hover { background: var(--surface-3); color: var(--ink); }
 .person-dialog__close svg { width: 17px; height: 17px; }
+
+/* Comfort tweaks only. The stacking itself is handled by flex-wrap above, so
+   nothing here is load-bearing for the layout. */
+@media (max-width: 700px) {
+  .person-dialog {
+    width: min(860px, calc(100vw - 1.5rem));
+    max-height: min(88vh, 46rem);
+  }
+  .person-dialog__body { padding: 0 1.35rem 1.5rem; }
+  .person-dialog__name { font-size: var(--step-1); }
+}
 
 /* One row on desktop whatever the department count — auto-flow: column beats
    auto-fit here, which wrapped six units to 5 + 1. Falls back to a wrapping
