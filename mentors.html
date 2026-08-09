@@ -259,6 +259,33 @@
   </div>
 </footer>
 
+<!-- ==================== MENTOR RECRUITMENT CALL-OUT ====================
+     Same data-callout-id as the homepage: one campaign, so dismissing it on
+     either page remembers it on both.
+     Must sit before main.js, which reads it on execution. -->
+<aside class="callout-toast" id="mentor-callout" aria-labelledby="mentor-callout-title"
+       data-callout-id="mentor-recruitment-2026" hidden>
+  <button class="callout-toast__close" type="button" data-callout-close aria-label="Dismiss this notice">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true">
+      <path d="M18 6 6 18M6 6l12 12"/>
+    </svg>
+  </button>
+  <p class="eyebrow">Call for mentors</p>
+  <h2 id="mentor-callout-title">Serve as a faculty mentor</h2>
+  <p>
+    We are recruiting mentors for the inaugural cohort. Mentors are paired with
+    one or two fellows &mdash; meeting biweekly, observing teaching, and advising
+    on the fellow&rsquo;s scholarly teaching project.
+  </p>
+  <ul class="chips">
+    <li class="chip chip--deadline"><span class="chip__label">Sign up by</span> Tue, Aug 11, 2026 &middot; 12:00&nbsp;PM</li>
+  </ul>
+  <div class="btn-row">
+    <a class="btn btn--primary" href="https://forms.gle/XGtkNzHq6h8pNeMC6" target="_blank" rel="noopener">Express Interest</a>
+    <a class="btn btn--outline" href="#become-a-mentor">Learn more</a>
+  </div>
+</aside>
+
 <script src="assets/js/main.js"></script>
 <script src="assets/js/people.js"></script>
 <script src="assets/js/mentors-data.js"></script>
