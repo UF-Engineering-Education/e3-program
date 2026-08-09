@@ -119,7 +119,9 @@
       <p class="placeholder-note" style="margin-top:2rem">
         <span><strong>Profiles in progress.</strong> Fellow names, headshots, and
         biographies are being finalized and will be published here ahead of the
-        Fall 2026 semester.</span>
+        Fall 2026 semester. If you are a fellow,
+        <a href="https://forms.gle/sdpuhV5bQLescDDr8" target="_blank" rel="noopener">submit
+        your profile information here</a>.</span>
       </p>
     </div>
   </section>
@@ -195,6 +197,29 @@
     <span>An Equal Opportunity Institution</span>
   </div>
 </footer>
+
+<!-- ==================== FELLOW PROFILE CALL-OUT ====================
+     Its own data-callout-id, separate from the homepage mentor notice, so the
+     two are dismissed independently.
+     Must sit before main.js, which reads it on execution. -->
+<aside class="callout-toast" id="fellow-callout" aria-labelledby="fellow-callout-title"
+       data-callout-id="fellow-profiles-2026" hidden>
+  <button class="callout-toast__close" type="button" data-callout-close aria-label="Dismiss this notice">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true">
+      <path d="M18 6 6 18M6 6l12 12"/>
+    </svg>
+  </button>
+  <p class="eyebrow">Fellow profiles</p>
+  <h2 id="fellow-callout-title">Are you an E<sup>3</sup> Fellow?</h2>
+  <p>
+    Fellow names, headshots, and biographies are being finalized for this page
+    ahead of the Fall 2026 semester. Send us your details and we will publish
+    your profile here.
+  </p>
+  <div class="btn-row">
+    <a class="btn btn--primary" href="https://forms.gle/sdpuhV5bQLescDDr8" target="_blank" rel="noopener">Submit your profile</a>
+  </div>
+</aside>
 
 <script src="assets/js/main.js"></script>
 <script src="assets/js/people.js"></script>
