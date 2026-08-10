@@ -59,10 +59,16 @@ window.E3_FELLOWS = [
     links: []
   },
   {
-    name: "",
+    name: "Michael “Mike” Strinden, Ph.D.",
     dept: "Biomedical Engineering",
-    photo: "",
-    bio: "",
+    role: "Visiting Assistant Instructional Professor",
+    photo: "assets/img/headshots/michael-strinden.jpg",
+    bio: "Mike works at the intersection of biomedical research, data science, and population health, integrating complex multimodal datasets to understand health and disease as a holistic discipline.",
+    bioFull: [
+      "Mike's work sits at the intersection of biomedical research, data science, and population health. His research focuses on integrating and analyzing complex multimodal datasets, including transcriptomics, metabolomics, microbiome, clinical, and spatial data, to better understand health and disease as a holistic discipline.",
+      "Mike holds a Ph.D. in Biomedical Science from the University of East Anglia, as well as an MPH in Analytics and an MA and BA in Anthropology. His interdisciplinary training has shaped his approach to both research and education, combining quantitative methods with biological and human-centered perspectives.",
+      "He has experience teaching biostatistics, forensic osteology, and evolutionary theory, and is particularly interested in developing accessible, rigorous classroom experiences grounded in real-world examples. Across research and teaching, Mike seeks to make complex scientific concepts more approachable while helping students and broader audiences develop the tools to critically engage with scientific information."
+    ],
     links: []
   },
   {

@@ -9,6 +9,12 @@ window.E3People = (function () {
     '<path d="M12 12.5a4.75 4.75 0 1 0 0-9.5 4.75 4.75 0 0 0 0 9.5Zm0 2c-4.6 0-8.5 2.5-8.5 5.6V22h17v-1.9c0-3.1-3.9-5.6-8.5-5.6Z"/>' +
     "</svg></div>";
 
+  // A person is "named" once their profile has been announced; until then the
+  // card renders as a to-be-announced placeholder.
+  function isNamed(person) {
+    return Boolean(person.name && person.name.trim());
+  }
+
   function esc(value) {
     return String(value == null ? "" : value)
       .replace(/&/g, "&amp;")
@@ -159,7 +165,7 @@ window.E3People = (function () {
 
     /* ---- Card markup ---- */
     function card(person, index) {
-      var named = Boolean(person.name && person.name.trim());
+      var named = isNamed(person);
       var displayName = named ? esc(person.name) : esc(tba);
       var expandable = Boolean(named && person.bioFull && supportsDialog);
 
@@ -243,6 +249,15 @@ window.E3People = (function () {
           : people.filter(function (p) {
               return p.dept === dept;
             });
+
+      // Announced profiles fill the grid from the top left, with the
+      // still-to-be-named placeholders after them. Partitioning rather than
+      // sorting keeps each group in its authored (department) order.
+      list = list.filter(isNamed).concat(
+        list.filter(function (p) {
+          return !isNamed(p);
+        })
+      );
 
       // Index against `people`, not the filtered list, so the dialog still
       // resolves the right person when a department filter is active.
