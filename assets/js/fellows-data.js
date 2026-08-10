@@ -42,7 +42,10 @@ window.E3_FELLOWS = [
       "Her research interests include computing education, computational thinking, AI literacy, and student-centered learning. Her doctoral research focused on computational thinking in K–12 education and teacher professional development.",
       "Before joining UF, she was a postdoctoral researcher at Purdue's Center for Instructional Excellence, where she worked on student autonomy, generative AI in undergraduate STEM education, faculty development, and undergraduate mentoring."
     ],
-    links: []
+    links: [
+      { label: "Personal website", url: "https://iambarbaraf.com/" },
+      { label: "LinkedIn", url: "https://www.linkedin.com/in/iambarbaraf/" }
+    ]
   },
   {
     name: "Yu Zhang, Ph.D.",
