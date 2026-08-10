@@ -9,10 +9,57 @@ window.E3People = (function () {
     '<path d="M12 12.5a4.75 4.75 0 1 0 0-9.5 4.75 4.75 0 0 0 0 9.5Zm0 2c-4.6 0-8.5 2.5-8.5 5.6V22h17v-1.9c0-3.1-3.9-5.6-8.5-5.6Z"/>' +
     "</svg></div>";
 
+  var ICON_LINKEDIN =
+    '<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">' +
+    '<path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM3 9h4v12H3zM9 ' +
+    '9h3.8v1.7h.05c.53-.95 1.83-1.95 3.75-1.95 4 0 4.4 2.5 4.4 5.75V21h-4v-5.7' +
+    'c0-1.36-.02-3.1-1.9-3.1-1.9 0-2.2 1.48-2.2 3v5.8H9z"/></svg>';
+
+  var ICON_GLOBE =
+    '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" ' +
+    'stroke-width="1.9" stroke-linecap="round" aria-hidden="true">' +
+    '<circle cx="12" cy="12" r="9"/><path d="M3.2 9h17.6M3.2 15h17.6"/>' +
+    '<path d="M12 3a14 14 0 0 1 0 18 14 14 0 0 1 0-18z"/></svg>';
+
   // A person is "named" once their profile has been announced; until then the
   // card renders as a to-be-announced placeholder.
   function isNamed(person) {
     return Boolean(person.name && person.name.trim());
+  }
+
+  function iconFor(url) {
+    return /linkedin\.com/i.test(url) ? ICON_LINKEDIN : ICON_GLOBE;
+  }
+
+  function validLinks(person) {
+    return (person.links || []).filter(function (l) {
+      return l && l.url && l.label;
+    });
+  }
+
+  // Icon-only profile links, shared by the card and the dialog. An icon has no
+  // text, so the label becomes the accessible name and the hover tooltip.
+  // Profile links point off-site, so they open in a new tab like the
+  // hand-written external links in the pages.
+  function iconLinks(person) {
+    var items = validLinks(person)
+      .map(function (l) {
+        return (
+          '<a class="fellow__link" href="' +
+          esc(l.url) +
+          '" target="_blank" rel="noopener" title="' +
+          esc(l.label) +
+          '" aria-label="' +
+          esc(l.label) +
+          (isNamed(person) ? " of " + esc(person.name) : "") +
+          '">' +
+          iconFor(l.url) +
+          "</a>"
+        );
+      })
+      .join("");
+
+    return items ? '<p class="fellow__links">' + items + "</p>" : "";
   }
 
   function esc(value) {
@@ -140,16 +187,14 @@ window.E3People = (function () {
           '" alt="Headshot of ' + esc(person.name || singular) + '"></div>'
         : "";
 
-      var links = (person.links || [])
-        .filter(function (l) { return l && l.url && l.label; })
-        .map(function (l) {
-          return '<a href="' + esc(l.url) + '" target="_blank" rel="noopener">' +
-            esc(l.label) + "</a>";
-        })
-        .join("");
+      var links = iconLinks(person);
 
       d.querySelector(".person-dialog__body").innerHTML =
-        photo +
+        // Photo and its icon links share one column, so the links sit
+        // directly beneath the headshot rather than after the bio.
+        (photo || links
+          ? '<div class="person-dialog__aside">' + photo + links + "</div>"
+          : "") +
         '<div class="person-dialog__text">' +
         '<h2 class="person-dialog__name">' + esc(person.name) + "</h2>" +
         '<p class="person-dialog__dept">' + esc(person.dept) + "</p>" +
@@ -157,7 +202,6 @@ window.E3People = (function () {
           ? '<p class="person-dialog__role">' + esc(person.role) + "</p>"
           : "") +
         paras.map(function (p) { return "<p>" + esc(p) + "</p>"; }).join("") +
-        (links ? '<p class="fellow__links">' + links + "</p>" : "") +
         "</div>";
 
       d.showModal();
@@ -185,22 +229,7 @@ window.E3People = (function () {
         ? '<p class="fellow__bio">' + esc(person.bio) + "</p>"
         : '<p class="fellow__bio muted">Profile coming soon.</p>';
 
-      var links = (person.links || [])
-        .filter(function (l) {
-          return l && l.url && l.label;
-        })
-        .map(function (l) {
-          // Profile links point off-site, so they open in a new tab like the
-          // hand-written external links in the pages.
-          return (
-            '<a href="' +
-            esc(l.url) +
-            '" target="_blank" rel="noopener">' +
-            esc(l.label) +
-            "</a>"
-          );
-        })
-        .join("");
+      var links = iconLinks(person);
 
       // The button is the real control: it carries the accessible name and
       // keyboard focus. CSS stretches it over the whole card so a click
@@ -228,8 +257,11 @@ window.E3People = (function () {
         "</p>" +
         role +
         bio +
-        (links ? '<p class="fellow__links">' + links + "</p>" : "") +
-        more +
+        // One footer row: the button on the left, icon links pushed right.
+        // Rendered only when there is something to put in it.
+        (more || links
+          ? '<div class="fellow__foot">' + more + links + "</div>"
+          : "") +
         "</div></article></li>"
       );
     }

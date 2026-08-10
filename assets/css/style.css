@@ -1154,14 +1154,35 @@ a[target="_blank"]::after {
   color: var(--ink-2);
   margin: 0.25rem 0 0;
 }
-.fellow__links {
+/* Card footer: "Read full bio" on the left, icon links pushed to the right. */
+.fellow__foot {
   display: flex;
-  flex-wrap: wrap;
+  align-items: center;
   gap: 0.75rem;
   margin-top: auto;
   padding-top: 0.9rem;
-  font-size: 0.85rem;
-  font-weight: 600;
+}
+.fellow__links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+  margin: 0;
+  /* Sits right even when there is no button beside it. */
+  margin-left: auto;
+}
+.fellow__link {
+  display: grid;
+  place-items: center;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  color: var(--ink-3);
+  transition: background-color 0.15s, color 0.15s;
+}
+.fellow__link svg { width: 17px; height: 17px; }
+.fellow__link:hover {
+  background: var(--surface-3);
+  color: var(--uf-blue);
 }
 .fellow--tba .fellow__name { color: var(--ink-3); font-style: italic; }
 
@@ -1182,8 +1203,7 @@ a[target="_blank"]::after {
    a click anywhere opens the dialog while keyboard users still get one stop. */
 .fellow__more {
   position: static;
-  margin-top: auto;
-  padding: 0.9rem 0 0;
+  padding: 0;
   border: 0;
   background: none;
   font: inherit;
@@ -1205,8 +1225,9 @@ a[target="_blank"]::after {
   outline: 3px solid var(--uf-orange);
   outline-offset: 3px;
 }
-/* Links inside the card must stay clickable above the button's overlay. */
+/* Icon links must stay clickable above the button's full-card overlay. */
 .fellow--expandable .fellow__links { position: relative; z-index: 1; }
+
 
 /* Full-bio dialog -------------------------------------------------------- */
 .person-dialog {
@@ -1279,16 +1300,25 @@ a[target="_blank"]::after {
   background: var(--ink-3);
   background-clip: content-box;
 }
-.person-dialog__photo {
-  /* Never grows or shrinks below its own size; the 45% cap is what makes it
-     shrink sensibly once it has wrapped onto its own line. */
+/* Photo column: the headshot with its icon links directly beneath. Never
+   grows or shrinks below its own size; the 45% cap is what makes it shrink
+   sensibly once it has wrapped onto its own line. */
+.person-dialog__aside {
   flex: 0 0 auto;
   width: 240px;
   max-width: 45%;
+}
+.person-dialog__photo {
+  width: 100%;
   aspect-ratio: 1 / 1;
   border-radius: var(--r-md);
   overflow: hidden;
   background: var(--surface-3);
+}
+/* Centred under the photo, overriding the card's push-to-the-right. */
+.person-dialog__aside .fellow__links {
+  margin: 0.6rem 0 0;
+  justify-content: center;
 }
 /* The 260px basis is the wrap trigger: when the photo and this basis no
    longer fit on one line, the text wraps beneath. min-width:0 defeats the
