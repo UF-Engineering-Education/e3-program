@@ -1,0 +1,13 @@
+# Filing an issue needs a GitHub account, so point everyone else somewhere
+# useful before they hit that wall.
+blank_issues_enabled: true
+contact_links:
+  - name: Questions about the program
+    url: https://uf-e3-fellows.space/contact.html
+    about: Ask about the E3 Fellows Program itself, rather than the website.
+  - name: Fellows — submit your profile
+    url: https://forms.gle/sdpuhV5bQLescDDr8
+    about: Send your headshot, biography, and links for the Fellows page.
+  - name: Faculty — volunteer as a mentor
+    url: https://forms.gle/XGtkNzHq6h8pNeMC6
+    about: Express interest in mentoring a fellow for the 2026-27 cohort.

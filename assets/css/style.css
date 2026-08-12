@@ -1647,6 +1647,16 @@ a[target="_blank"]::after {
   gap: 0.75rem;
   color: rgba(255, 255, 255, 0.55);
 }
+/* Source-repository link. Dimmed to match the rest of the bottom bar rather
+   than the brighter .site-footer a, since it is a utility link. */
+.footer-repo {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  color: rgba(255, 255, 255, 0.55);
+}
+.footer-repo:hover { color: #fff; }
+.footer-repo svg { width: 15px; height: 15px; flex: none; }
 
 /* --------------------------------------------------------------------------
    14. Motion

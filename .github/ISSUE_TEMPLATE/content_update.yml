@@ -1,0 +1,65 @@
+name: Content update
+description: Add or change a fellow, mentor, date, link, or wording.
+title: "[Content]: "
+labels: ["content"]
+body:
+  - type: dropdown
+    id: kind
+    attributes:
+      label: What needs updating?
+      options:
+        - Fellow profile
+        - Mentor profile
+        - Program dates or a deadline
+        - A link
+        - Wording or a typo
+        - Something else
+    validations:
+      required: true
+
+  - type: input
+    id: page
+    attributes:
+      label: Which page?
+      placeholder: https://uf-e3-fellows.space/program.html
+    validations:
+      required: true
+
+  - type: textarea
+    id: current
+    attributes:
+      label: What it says now
+      description: Paste the current text, or say "not on the site yet".
+    validations:
+      required: false
+
+  - type: textarea
+    id: proposed
+    attributes:
+      label: What it should say
+      description: Exact wording is ideal — it can then be used as-is.
+    validations:
+      required: true
+
+  - type: markdown
+    attributes:
+      value: |
+        ### Adding a fellow or mentor?
+
+        Please include all of the following, and attach the headshot to this issue:
+
+        - Full name, with credentials as it should appear (e.g. `Jane Doe, Ph.D.`)
+        - Department or unit
+        - Appointment title
+        - A short biography of roughly 250 characters, for the card
+        - The full biography, for the pop-up profile
+        - Any personal website or LinkedIn links
+        - A headshot: square or portrait, at least 600x600 px, JPG or PNG
+
+  - type: checkboxes
+    id: headshot
+    attributes:
+      label: Headshot
+      options:
+        - label: I have attached a headshot (only needed for a new profile)
+          required: false

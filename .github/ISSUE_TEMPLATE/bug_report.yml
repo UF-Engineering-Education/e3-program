@@ -1,0 +1,64 @@
+name: Site bug
+description: Something on the website is broken, missing, or displays incorrectly.
+title: "[Bug]: "
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for reporting this. The more specific you can be about *where* you
+        saw the problem, the faster it can be fixed.
+
+  - type: input
+    id: page
+    attributes:
+      label: Which page?
+      description: Paste the address, or just name the page.
+      placeholder: https://uf-e3-fellows.space/fellows.html
+    validations:
+      required: true
+
+  - type: textarea
+    id: what-happened
+    attributes:
+      label: What went wrong?
+      description: Describe what you saw.
+      placeholder: The headshots overlap the text when I open a fellow's profile.
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected
+    attributes:
+      label: What did you expect instead?
+    validations:
+      required: false
+
+  - type: textarea
+    id: screenshot
+    attributes:
+      label: Screenshot
+      description: Drag an image into this box if it helps show the problem.
+    validations:
+      required: false
+
+  - type: dropdown
+    id: device
+    attributes:
+      label: What were you using?
+      multiple: true
+      options:
+        - Desktop or laptop
+        - Tablet
+        - Phone
+    validations:
+      required: false
+
+  - type: input
+    id: browser
+    attributes:
+      label: Browser
+      description: Include the version if you know it.
+      placeholder: Chrome, Safari, Firefox, Edge
+    validations:
+      required: false
