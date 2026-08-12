@@ -63,11 +63,19 @@ window.E3_FELLOWS = [
     ]
   },
   {
-    name: "",
+    name: "Logan Morton, Ph.D.",
     dept: "Chemical Engineering",
-    photo: "",
-    bio: "",
-    links: []
+    role: "Visiting Assistant Instructional Professor",
+    photo: "assets/img/headshots/logan-morton.jpg",
+    bio: "Dr. Morton's research spans biomaterials, protein engineering, polymer design, and structure-property relationships in soft materials, with applications in regenerative medicine and sustainable resource recovery.",
+    bioFull: [
+      "Dr. Morton is a Visiting Assistant Instructional Professor in the Department of Chemical Engineering at the University of Florida. He earned his Ph.D. and B.S. in Chemical Engineering from the University of Texas at Austin and the University of Missouri.",
+      "His research spanned biomaterials, protein engineering, polymer design, and structure-property relationships in soft materials, with applications in regenerative medicine and sustainable resource recovery. Before joining UF, he was a postdoctoral scholar at Tufts University, where he developed silk-based filtration materials for recovering rare earth elements. At Tufts, he also created and taught the Sustainable Materials elective.",
+      "An NSF Graduate Research Fellow, Dr. Morton brings extensive experience in research, mentorship, and scientific outreach to his teaching, with a focus on preparing the next generation of scientists and engineers."
+    ],
+    links: [
+      { label: "LinkedIn", url: "https://www.linkedin.com/in/logan-morton-6197b4a1/" }
+    ]
   },
   {
     name: "Michael “Mike” Strinden, Ph.D.",
@@ -96,11 +104,19 @@ window.E3_FELLOWS = [
     links: []
   },
   {
-    name: "",
+    name: "Bryce Shirk, Ph.D.",
     dept: "Biomedical Engineering",
-    photo: "",
-    bio: "",
-    links: []
+    role: "Visiting Assistant Instructional Professor",
+    photo: "assets/img/headshots/bryce-shirk.jpg",
+    bio: "Dr. Shirk explores how naturally evolved biological processes can be adapted and engineered for applications in biomaterials, biotechnology, and biomanufacturing.",
+    bioFull: [
+      "Dr. Shirk is a Visiting Assistant Instructional Professor in the J. Crayton Pruitt Family Department of Biomedical Engineering at the University of Florida. He earned his Ph.D. in Biomedical Engineering and M.S. in Entomology and Nematology from the University of Florida, and his B.S. in Biochemistry from Florida State University.",
+      "His research explores how naturally evolved biological processes can be adapted and engineered for applications in biomaterials, biotechnology, and biomanufacturing. This work includes genetically engineering insects to produce novel functional materials and developing insect cell systems for recombinant protein expression. Before his current position, Dr. Shirk served as a USDA AFRI Postdoctoral Fellow at the University of Florida.",
+      "As an educator and mentor, he is passionate about helping students connect engineering concepts to meaningful biological problems, drawing on his interdisciplinary background to make complex scientific ideas accessible across disciplines and audiences."
+    ],
+    links: [
+      { label: "LinkedIn", url: "https://www.linkedin.com/in/bryce-shirk91" }
+    ]
   },
   {
     name: "",
@@ -117,11 +133,19 @@ window.E3_FELLOWS = [
     links: []
   },
   {
-    name: "",
+    name: "Mary Ifeoma Nwanua, Ph.D.",
     dept: "Engineering Leadership",
-    photo: "",
-    bio: "",
-    links: []
+    role: "Visiting Assistant Instructional Professor",
+    photo: "assets/img/headshots/mary-nwanua.jpg",
+    bio: "Dr. Nwanua's research focuses on developing future engineering and construction professionals and the competencies they need in an increasingly technology- and AI-enabled industry.",
+    bioFull: [
+      "Dr. Nwanua holds a B.Sc. in Quantity Surveying (construction cost management) and an M.Sc. in Quantity Surveying (infrastructure cost management) from Nnamdi Azikiwe University, Nigeria, and a Ph.D. in Civil Engineering from the University of Florida.",
+      "Her research focuses on the development of future engineering and construction professionals, particularly the competencies needed to thrive in an increasingly technology- and AI-enabled industry. Her interests include innovative learning pedagogies, artificial intelligence, and human-robot collaboration and interaction in engineering and construction. Her doctoral research examined construction professionals' attitudes and vulnerabilities in shared workspaces with drones.",
+      "Dr. Nwanua brings more than three years of construction industry experience as a cost estimator on residential, industrial, and real estate projects. She has also taught as a STEM tutor and university peer tutor in Nigeria and contributed to NSF grant-funded research at the University of Florida. Her doctoral research and strong oral communication skills earned her recognition as a Top 10 finalist in the University of Florida's 2025 Three Minute Thesis (3MT) competition."
+    ],
+    links: [
+      { label: "LinkedIn", url: "https://www.linkedin.com/in/nwanua-mary/" }
+    ]
   },
   {
     name: "Jasmine Smith, Ph.D.",
