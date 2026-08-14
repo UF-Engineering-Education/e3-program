@@ -119,11 +119,19 @@ window.E3_FELLOWS = [
     ]
   },
   {
-    name: "",
+    name: "Sophia Ahmed, Ph.D.",
     dept: "Materials Science & Engineering",
-    photo: "",
-    bio: "",
-    links: []
+    role: "Visiting Assistant Instructional Professor",
+    photo: "assets/img/headshots/sophia-ahmed.jpg",
+    bio: "Dr. Ahmed's doctoral research examined salt hydrate eutectic phase change materials for thermal energy storage. Her interests span energy storage materials, phase transformations, engineering education, and STEM outreach.",
+    bioFull: [
+      "Sophia Ahmed is a UF alumna, earning her B.S. in Materials Science and Engineering from UF in 2020 and her Ph.D. in Materials Science and Engineering from Texas A&M University in 2025. From 2025 to 2026, she completed a postdoctoral position in UF's MSE department in engineering education work.",
+      "Her doctoral research, conducted in the PHATE Lab under Dr. Patrick Shamberger, focused on salt hydrate eutectic phase change materials for thermal energy storage, examining the long-term cycling stability of eutectic systems and the mechanisms underlying their degradation. This included work on the discovery of salt hydrate eutectic compositions as well as developing PCM composites.",
+      "During her postdoc at UF, working under Dr. Nancy Ruzycki, she coordinated STEM summer camps across Florida and conducted research on near-peer mentorship models and STEM identity. Her interests span energy storage materials, phase transformations, degradation of materials, social implications of materials, engineering education, and STEM outreach."
+    ],
+    links: [
+      { label: "LinkedIn", url: "https://www.linkedin.com/in/sophia-ahmed-28050b155/" }
+    ]
   },
   {
     name: "",
