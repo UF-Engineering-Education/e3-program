@@ -186,6 +186,9 @@ a[target="_blank"]::after {
   max-width: 44rem;
   margin-bottom: clamp(2rem, 4vw, 3rem);
 }
+/* Lets an intro run the full width of the wrap instead of the default
+   reading measure. */
+.section-head--full { max-width: none; }
 .section-head--center {
   margin-inline: auto;
   text-align: center;
@@ -563,6 +566,9 @@ a[target="_blank"]::after {
   max-width: 850px;
   text-wrap: balance;
 }
+/* Full width of the wrap. Needs the .hero prefix to outrank `.hero .lede`. */
+.hero .lede--full,
+.lede--full { max-width: none; }
 .hero__tag {
   display: inline-block;
   margin-bottom: 1.4rem;
@@ -837,6 +843,67 @@ a[target="_blank"]::after {
 .deflist dd { margin: 0; }
 @media (max-width: 640px) {
   .deflist > div { grid-template-columns: 1fr; gap: 0.35rem; }
+}
+
+/* Course cards — one compact row per course: the fellow's face, the course
+   code, its title, and who teaches it. */
+.course-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(285px, 1fr));
+  gap: 0.7rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.course-card {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  margin: 0;
+  padding: 0.7rem 0.95rem;
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: var(--r-md);
+}
+.course-card__avatar {
+  flex: none;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  object-fit: cover;
+  /* Matches the headshot framing used on the fellow cards. */
+  object-position: center 22%;
+  background: var(--surface-3);
+}
+.course-card__avatar--initials {
+  display: grid;
+  place-items: center;
+  color: var(--uf-blue);
+  font-size: 0.85rem;
+  font-weight: 800;
+  letter-spacing: 0.02em;
+}
+/* min-width:0 lets a long course title wrap instead of widening the card. */
+.course-card__text { min-width: 0; }
+.course-card__code {
+  margin: 0;
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  color: var(--uf-blue);
+}
+.course-card__title {
+  margin: 0.1rem 0 0;
+  font-size: 0.92rem;
+  font-weight: 600;
+  line-height: 1.3;
+  color: var(--ink);
+}
+.course-card__fellow {
+  margin: 0.15rem 0 0;
+  font-size: 0.78rem;
+  line-height: 1.35;
+  color: var(--ink-3);
 }
 
 /* --------------------------------------------------------------------------

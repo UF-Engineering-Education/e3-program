@@ -8,6 +8,9 @@
      dept   - MUST match one of the department names in DEPARTMENTS below
      role   - optional title line, e.g. "Visiting Assistant Instructional
               Professor". Omit it and the line is left out.
+     course - optional Fall 2026 teaching assignment, e.g.
+              "COP 2273 · Python for Engineers". Omit it and the line is
+              left out.
      photo  - path to the headshot, e.g. "assets/img/headshots/jane-doe.jpg"
               (square crop, at least 600x600px). Leave "" to show a
               placeholder silhouette until the photo is ready.
@@ -35,6 +38,7 @@ window.E3_FELLOWS = [
     name: "Bárbara Fagundes, Ph.D.",
     dept: "Engineering Education",
     role: "Visiting Assistant Instructional Professor",
+    course: "COP 2273 · Python for Engineers",
     photo: "assets/img/headshots/barbara-fagundes.jpg",
     bio: "Dr. Fagundes earned her Ph.D. in Engineering Education from Purdue and an M.S. in Computer Science from Jackson State University. Her research spans computing education, computational thinking, AI literacy, and student-centered learning.",
     bioFull: [
@@ -51,6 +55,7 @@ window.E3_FELLOWS = [
     name: "Yu Zhang, Ph.D.",
     dept: "Chemical Engineering",
     role: "Visiting Assistant Instructional Professor",
+    course: "ECH 4504 · Chemical Kinetics and Reactor Design",
     photo: "assets/img/headshots/yu-zhang.jpg",
     bio: "Dr. Zhang teaches undergraduate chemical engineering courses. Her doctoral research at Michigan used microfluidic technologies to isolate circulating tumor cells, and her current interests include laboratory curriculum design and generative AI in instruction.",
     bioFull: [
@@ -66,6 +71,7 @@ window.E3_FELLOWS = [
     name: "Logan Morton, Ph.D.",
     dept: "Chemical Engineering",
     role: "Visiting Assistant Instructional Professor",
+    course: "ECH 3023 · Material and Energy Balances",
     photo: "assets/img/headshots/logan-morton.jpg",
     bio: "Dr. Morton's research spans biomaterials, protein engineering, polymer design, and structure-property relationships in soft materials, with applications in regenerative medicine and sustainable resource recovery.",
     bioFull: [
@@ -81,6 +87,7 @@ window.E3_FELLOWS = [
     name: "Michael “Mike” Strinden, Ph.D.",
     dept: "Biomedical Engineering",
     role: "Visiting Assistant Instructional Professor",
+    course: "BME 4311 · Molecular Biomedical Engineering",
     photo: "assets/img/headshots/michael-strinden.jpg",
     bio: "Dr. Strinden works at the intersection of biomedical research, data science, and population health, integrating complex multimodal datasets to understand health and disease as a holistic discipline.",
     bioFull: [
@@ -94,6 +101,7 @@ window.E3_FELLOWS = [
     name: "Jessica Sena, Ph.D.",
     dept: "Biomedical Engineering",
     role: "Visiting Assistant Instructional Professor",
+    course: "BME 3053C · Computer Applications for BME",
     photo: "assets/img/headshots/jessica-sena.jpg",
     bio: "Dr. Sena's research focuses on artificial intelligence for healthcare, including multimodal machine learning, electronic health records, wearable sensors, computer vision, and large language models.",
     bioFull: [
@@ -107,6 +115,7 @@ window.E3_FELLOWS = [
     name: "Bryce Shirk, Ph.D.",
     dept: "Biomedical Engineering",
     role: "Visiting Assistant Instructional Professor",
+    course: "BME 3323L · Cellular Engineering Laboratory",
     photo: "assets/img/headshots/bryce-shirk.jpg",
     bio: "Dr. Shirk explores how naturally evolved biological processes can be adapted and engineered for applications in biomaterials, biotechnology, and biomanufacturing.",
     bioFull: [
@@ -122,6 +131,7 @@ window.E3_FELLOWS = [
     name: "Sophia Ahmed, Ph.D.",
     dept: "Materials Science & Engineering",
     role: "Visiting Assistant Instructional Professor",
+    course: "EMA 3010 · Materials",
     photo: "assets/img/headshots/sophia-ahmed.jpg",
     bio: "Dr. Ahmed's doctoral research examined salt hydrate eutectic phase change materials for thermal energy storage. Her interests span energy storage materials, phase transformations, engineering education, and STEM outreach.",
     bioFull: [
@@ -134,8 +144,10 @@ window.E3_FELLOWS = [
     ]
   },
   {
-    name: "",
+    name: "Gayani Chathurika Pathiraja",
     dept: "Materials Science & Engineering",
+    role: "Visiting Assistant Instructional Professor",
+    course: "EMA 3010 · Materials",
     photo: "",
     bio: "",
     links: []
@@ -144,6 +156,7 @@ window.E3_FELLOWS = [
     name: "Mary Ifeoma Nwanua, Ph.D.",
     dept: "Engineering Leadership",
     role: "Visiting Assistant Instructional Professor",
+    course: "EGS 4034 · Engineering Ethics & Professionalism",
     photo: "assets/img/headshots/mary-nwanua.jpg",
     bio: "Dr. Nwanua's research focuses on developing future engineering and construction professionals and the competencies they need in an increasingly technology- and AI-enabled industry.",
     bioFull: [
@@ -159,6 +172,7 @@ window.E3_FELLOWS = [
     name: "Jasmine Smith, Ph.D.",
     dept: "Engineering Innovation",
     role: "Visiting Assistant Instructional Professor",
+    course: "EGN 4643 · Engineering Innovation",
     photo: "assets/img/headshots/jasmine-smith.jpg",
     bio: "Dr. Smith works with students to build creativity, innovation, and entrepreneurship. Her research treats mentoring communication as a measurable, biologically grounded phenomenon, spanning neuroscience, biomedical engineering, and engineering education.",
     bioFull: [

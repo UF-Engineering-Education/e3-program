@@ -59,15 +59,47 @@
         <li>Outcomes</li>
       </ol>
       <h1>Outcomes</h1>
-      <p class="lede">
-        What fellows complete, what they leave with, and what the program returns
-        to their departments or units and their students.
+      <p class="lede lede--full">
+        What fellows complete, what they leave with, & what the program returns
+        to the departments or units & their students.
       </p>
     </div>
   </section>
 
+  <!-- =========================== COURSES ==========================
+       Deliberately OUTSIDE the parked <template> below: the Fall 2026
+       teaching assignments are known now, even though the outcomes
+       themselves are not. Anything placed inside that template is inert
+       and will not render. -->
+  <section class="section" id="courses">
+    <div class="wrap">
+      <div class="section-head section-head--full reveal">
+        <p class="eyebrow">Fall 2026</p>
+        <h2>Courses taught by the inaugural cohort</h2>
+        <p class="lede">
+          Every fellow leads a course of record from their first semester,
+          putting evidence-based teaching directly into the undergraduate
+          curriculum across six units of the college.
+        </p>
+      </div>
+
+      <!-- Generated from assets/js/fellows-data.js so this list cannot drift
+           out of step with the Fellows page. No `reveal` class here: that
+           starts at opacity 0 and depends on the observer firing, which is a
+           needless way for a JS-populated list to end up invisible. -->
+      <ul class="course-grid" id="course-list"></ul>
+
+      <noscript>
+        <p class="placeholder-note" style="margin-top:1.5rem">
+          <span>The course list is generated from a data file and needs
+          JavaScript enabled.</span>
+        </p>
+      </noscript>
+    </div>
+  </section>
+
   <!-- ========================== COMING SOON ========================= -->
-  <section class="section">
+  <section class="section section--alt">
     <div class="wrap wrap--narrow center">
       <p class="eyebrow" style="justify-content:center">Coming soon</p>
       <h2>Scholarship and Program Impact.</h2>
@@ -339,6 +371,90 @@
   </div>
 </footer>
 
+<script src="assets/js/fellows-data.js"></script>
+<script>
+/* Build the Fall 2026 course cards from the fellows data. Nodes are created
+   with textContent rather than innerHTML, so no escaping is needed. */
+(function () {
+  "use strict";
+
+  var list = document.getElementById("course-list");
+  if (!list || !window.E3_FELLOWS) return;
+
+  // "Michael “Mike” Strinden, Ph.D." -> "MS". Credentials after the first
+  // comma and any quoted nickname are dropped first.
+  function initials(name) {
+    var parts = name
+      .replace(/,.*$/, "")
+      .replace(/[“”"'']/g, "")
+      .trim()
+      .split(/\s+/);
+    var first = parts[0] ? parts[0].charAt(0) : "";
+    var last = parts.length > 1 ? parts[parts.length - 1].charAt(0) : "";
+    return (first + last).toUpperCase();
+  }
+
+  var rows = window.E3_FELLOWS
+    .filter(function (f) { return f.course; })
+    .map(function (f) {
+      // Stored as "CODE · Title"; fall back to the whole string if unsplit.
+      var at = f.course.indexOf("·");
+      return {
+        code: at > -1 ? f.course.slice(0, at).trim() : f.course,
+        title: at > -1 ? f.course.slice(at + 1).trim() : "",
+        fellow: f.name,
+        photo: f.photo
+      };
+    })
+    .sort(function (a, b) {
+      return a.code.localeCompare(b.code) || a.fellow.localeCompare(b.fellow);
+    });
+
+  rows.forEach(function (r) {
+    var item = document.createElement("li");
+    item.className = "course-card";
+
+    // Decorative: the fellow's name sits next to it in text.
+    if (r.photo) {
+      var img = document.createElement("img");
+      img.className = "course-card__avatar";
+      img.src = r.photo;
+      img.alt = "";
+      img.width = 44;
+      img.height = 44;
+      img.loading = "lazy";
+      item.appendChild(img);
+    } else {
+      var badge = document.createElement("span");
+      badge.className = "course-card__avatar course-card__avatar--initials";
+      badge.setAttribute("aria-hidden", "true");
+      badge.textContent = initials(r.fellow);
+      item.appendChild(badge);
+    }
+
+    var text = document.createElement("div");
+    text.className = "course-card__text";
+
+    var code = document.createElement("p");
+    code.className = "course-card__code";
+    code.textContent = r.code;
+
+    var title = document.createElement("p");
+    title.className = "course-card__title";
+    title.textContent = r.title;
+
+    var who = document.createElement("p");
+    who.className = "course-card__fellow";
+    who.textContent = r.fellow;
+
+    text.appendChild(code);
+    text.appendChild(title);
+    text.appendChild(who);
+    item.appendChild(text);
+    list.appendChild(item);
+  });
+})();
+</script>
 <script src="assets/js/main.js"></script>
 </body>
 </html>
