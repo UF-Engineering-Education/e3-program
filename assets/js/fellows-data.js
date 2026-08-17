@@ -144,13 +144,20 @@ window.E3_FELLOWS = [
     ]
   },
   {
-    name: "Gayani Chathurika Pathiraja",
+    name: "Gayani Pathiraja, Ph.D.",
     dept: "Materials Science & Engineering",
     role: "Visiting Assistant Instructional Professor",
     course: "EMA 3010 · Materials",
-    photo: "",
-    bio: "",
-    links: []
+    photo: "assets/img/headshots/gayani-pathiraja.jpg",
+    bio: "Dr. Pathiraja's research spans nanomaterials for sensing and wastewater treatment, thermally resistant materials for extreme environments, and the structure-property relationships of semiconductor nanomaterials.",
+    bioFull: [
+      "Dr. Pathiraja is a Visiting Assistant Instructional Professor in the Department of Materials Science and Engineering at the University of Florida. She earned her Ph.D. in Nanoscience from the University of North Carolina at Greensboro, an M.Phil. from the University of Peradeniya, and a bachelor's degree in Materials Science and Technology from Uva Wellassa University, Sri Lanka.",
+      "Her research spanned nanomaterials for sensing and wastewater treatment applications, thermally resistant materials for extreme environments, and the structure-property relationships of semiconductor nanomaterials. Before joining UF, she was a postdoctoral researcher at the Science and Technologies for Phosphorus Sustainability (STEPS) center, where she developed nanomaterials for selective adsorption and colorimetric detection of phosphates in environmental water.",
+      "She also served as the core-facility transmission electron microscopy (TEM) lab manager at the Joint School of Nanoscience and Nanoengineering from 2022 to 2026. She draws on extensive experience in research, teaching, and student mentoring to cultivate the next generation of materials scientists and engineers."
+    ],
+    links: [
+      { label: "LinkedIn", url: "https://www.linkedin.com/in/gayani-pathiraja-phd-8a158644/" }
+    ]
   },
   {
     name: "Mary Ifeoma Nwanua, Ph.D.",

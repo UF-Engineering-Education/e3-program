@@ -116,6 +116,11 @@
         </p>
       </noscript>
 
+      <!-- CLOSED FOR 2026-27 — all ten profiles are published, so this call
+           for submissions is commented out.
+           TO REOPEN NEXT YEAR: uncomment the block below and update the
+           semester and the form URL. -->
+      <!--
       <p class="placeholder-note" style="margin-top:2rem">
         <span><strong>Profiles in progress.</strong> Fellow names, headshots, and
         biographies are being finalized and will be published here ahead of the
@@ -123,6 +128,7 @@
         <a href="https://forms.gle/sdpuhV5bQLescDDr8" target="_blank" rel="noopener">submit
         your profile information here</a>.</span>
       </p>
+      -->
     </div>
   </section>
 
@@ -205,9 +211,20 @@
 </footer>
 
 <!-- ==================== FELLOW PROFILE CALL-OUT ====================
-     Its own data-callout-id, separate from the homepage mentor notice, so the
-     two are dismissed independently.
-     Must sit before main.js, which reads it on execution. -->
+     CLOSED FOR 2026-27 — commented out on 15 Aug 2026, once all ten profiles
+     were published.
+
+     TO REOPEN NEXT YEAR:
+       1. Delete the opening comment marker below and its matching one just
+          after </aside>.
+       2. Update the semester in the copy and the form URL.
+       3. Change data-callout-id (e.g. fellow-profiles-2027) so the notice
+          reappears for anyone who dismissed this year's.
+
+     Note: this aside must stay before main.js, which reads it on execution.
+     Its data-callout-id is separate from the mentor notice, so the two are
+     dismissed independently. -->
+<!--
 <aside class="callout-toast" id="fellow-callout" aria-labelledby="fellow-callout-title"
        data-callout-id="fellow-profiles-2026" hidden>
   <button class="callout-toast__close" type="button" data-callout-close aria-label="Dismiss this notice">
@@ -226,6 +243,7 @@
     <a class="btn btn--primary" href="https://forms.gle/sdpuhV5bQLescDDr8" target="_blank" rel="noopener">Submit your profile</a>
   </div>
 </aside>
+-->
 
 <script src="assets/js/main.js"></script>
 <script src="assets/js/people.js"></script>
