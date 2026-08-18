@@ -6,8 +6,8 @@
    For each fellow, fill in:
      name   - full name with credentials, e.g. "Jane Doe, Ph.D."
      dept   - MUST match one of the department names in DEPARTMENTS below
-     role   - optional title line, e.g. "Visiting Assistant Instructional
-              Professor". Omit it and the line is left out.
+     role   - optional title line, e.g. "Visiting Assistant Professor".
+              Omit it and the line is left out.
      course - optional Fall 2026 teaching assignment, e.g.
               "COP 2273 · Python for Engineers". Omit it and the line is
               left out.
@@ -37,12 +37,12 @@ window.E3_FELLOWS = [
   {
     name: "Bárbara Fagundes, Ph.D.",
     dept: "Engineering Education",
-    role: "Visiting Assistant Instructional Professor",
+    role: "Visiting Assistant Professor",
     course: "COP 2273 · Python for Engineers",
     photo: "assets/img/headshots/barbara-fagundes.jpg",
     bio: "Dr. Fagundes earned her Ph.D. in Engineering Education from Purdue and an M.S. in Computer Science from Jackson State University. Her research spans computing education, computational thinking, AI literacy, and student-centered learning.",
     bioFull: [
-      "Bárbara Fagundes is a Visiting Assistant Instructional Professor in the Department of Engineering Education at the University of Florida. She earned her Ph.D. in Engineering Education from Purdue University and an M.S. in Computer Science from Jackson State University.",
+      "Bárbara Fagundes is a Visiting Assistant Professor in the Department of Engineering Education at the University of Florida. She earned her Ph.D. in Engineering Education from Purdue University and an M.S. in Computer Science from Jackson State University.",
       "Her research interests include computing education, computational thinking, AI literacy, and student-centered learning. Her doctoral research focused on computational thinking in K–12 education and teacher professional development.",
       "Before joining UF, she was a postdoctoral researcher at Purdue's Center for Instructional Excellence, where she worked on student autonomy, generative AI in undergraduate STEM education, faculty development, and undergraduate mentoring."
     ],
@@ -54,12 +54,12 @@ window.E3_FELLOWS = [
   {
     name: "Yu Zhang, Ph.D.",
     dept: "Chemical Engineering",
-    role: "Visiting Assistant Instructional Professor",
+    role: "Visiting Assistant Professor",
     course: "ECH 4504 · Chemical Kinetics and Reactor Design",
     photo: "assets/img/headshots/yu-zhang.jpg",
     bio: "Dr. Zhang teaches undergraduate chemical engineering courses. Her doctoral research at Michigan used microfluidic technologies to isolate circulating tumor cells, and her current interests include laboratory curriculum design and generative AI in instruction.",
     bioFull: [
-      "Yu (Yolanda) Zhang is a Visiting Assistant Instructional Professor at the University of Florida's Herbert Wertheim College of Engineering, where she teaches undergraduate chemical engineering. She earned her Ph.D. in Chemical Engineering from the University of Michigan and her B.S. in Chemical Engineering from the University of Washington. Her doctoral research in the S. Nagrath Lab focused on microfluidic technologies for isolating circulating tumor cells for pancreatic disease applications, and tissue engineering for culturing those rare cells.",
+      "Yu (Yolanda) Zhang is a Visiting Assistant Professor at the University of Florida's Herbert Wertheim College of Engineering, where she teaches undergraduate chemical engineering. She earned her Ph.D. in Chemical Engineering from the University of Michigan and her B.S. in Chemical Engineering from the University of Washington. Her doctoral research in the S. Nagrath Lab focused on microfluidic technologies for isolating circulating tumor cells for pancreatic disease applications, and tissue engineering for culturing those rare cells.",
       "At Michigan she served as a graduate teaching assistant for two semesters, completed the Graduate Teaching Certificate, and undertook coursework in engineering education research. Her current interests include laboratory curriculum design, the integration of generative AI into engineering instruction, and online and internationally collaborative course design."
     ],
     links: [
@@ -70,12 +70,12 @@ window.E3_FELLOWS = [
   {
     name: "Logan Morton, Ph.D.",
     dept: "Chemical Engineering",
-    role: "Visiting Assistant Instructional Professor",
+    role: "Visiting Assistant Professor",
     course: "ECH 3023 · Material and Energy Balances",
     photo: "assets/img/headshots/logan-morton.jpg",
     bio: "Dr. Morton's research spans biomaterials, protein engineering, polymer design, and structure-property relationships in soft materials, with applications in regenerative medicine and sustainable resource recovery.",
     bioFull: [
-      "Dr. Morton is a Visiting Assistant Instructional Professor in the Department of Chemical Engineering at the University of Florida. He earned his Ph.D. and B.S. in Chemical Engineering from the University of Texas at Austin and the University of Missouri.",
+      "Dr. Morton is a Visiting Assistant Professor in the Department of Chemical Engineering at the University of Florida. He earned his Ph.D. and B.S. in Chemical Engineering from the University of Texas at Austin and the University of Missouri.",
       "His research spanned biomaterials, protein engineering, polymer design, and structure-property relationships in soft materials, with applications in regenerative medicine and sustainable resource recovery. Before joining UF, he was a postdoctoral scholar at Tufts University, where he developed silk-based filtration materials for recovering rare earth elements. At Tufts, he also created and taught the Sustainable Materials elective.",
       "An NSF Graduate Research Fellow, Dr. Morton brings extensive experience in research, mentorship, and scientific outreach to his teaching, with a focus on preparing the next generation of scientists and engineers."
     ],
@@ -86,7 +86,7 @@ window.E3_FELLOWS = [
   {
     name: "Michael “Mike” Strinden, Ph.D.",
     dept: "Biomedical Engineering",
-    role: "Visiting Assistant Instructional Professor",
+    role: "Visiting Assistant Professor",
     course: "BME 4311 · Molecular Biomedical Engineering",
     photo: "assets/img/headshots/michael-strinden.jpg",
     bio: "Dr. Strinden works at the intersection of biomedical research, data science, and population health, integrating complex multimodal datasets to understand health and disease as a holistic discipline.",
@@ -100,7 +100,7 @@ window.E3_FELLOWS = [
   {
     name: "Jessica Sena, Ph.D.",
     dept: "Biomedical Engineering",
-    role: "Visiting Assistant Instructional Professor",
+    role: "Visiting Assistant Professor",
     course: "BME 3053C · Computer Applications for BME",
     photo: "assets/img/headshots/jessica-sena.jpg",
     bio: "Dr. Sena's research focuses on artificial intelligence for healthcare, including multimodal machine learning, electronic health records, wearable sensors, computer vision, and large language models.",
@@ -114,12 +114,12 @@ window.E3_FELLOWS = [
   {
     name: "Bryce Shirk, Ph.D.",
     dept: "Biomedical Engineering",
-    role: "Visiting Assistant Instructional Professor",
+    role: "Visiting Assistant Professor",
     course: "BME 3323L · Cellular Engineering Laboratory",
     photo: "assets/img/headshots/bryce-shirk.jpg",
     bio: "Dr. Shirk explores how naturally evolved biological processes can be adapted and engineered for applications in biomaterials, biotechnology, and biomanufacturing.",
     bioFull: [
-      "Dr. Shirk is a Visiting Assistant Instructional Professor in the J. Crayton Pruitt Family Department of Biomedical Engineering at the University of Florida. He earned his Ph.D. in Biomedical Engineering and M.S. in Entomology and Nematology from the University of Florida, and his B.S. in Biochemistry from Florida State University.",
+      "Dr. Shirk is a Visiting Assistant Professor in the J. Crayton Pruitt Family Department of Biomedical Engineering at the University of Florida. He earned his Ph.D. in Biomedical Engineering and M.S. in Entomology and Nematology from the University of Florida, and his B.S. in Biochemistry from Florida State University.",
       "His research explores how naturally evolved biological processes can be adapted and engineered for applications in biomaterials, biotechnology, and biomanufacturing. This work includes genetically engineering insects to produce novel functional materials and developing insect cell systems for recombinant protein expression. Before his current position, Dr. Shirk served as a USDA AFRI Postdoctoral Fellow at the University of Florida.",
       "As an educator and mentor, he is passionate about helping students connect engineering concepts to meaningful biological problems, drawing on his interdisciplinary background to make complex scientific ideas accessible across disciplines and audiences."
     ],
@@ -130,7 +130,7 @@ window.E3_FELLOWS = [
   {
     name: "Sophia Ahmed, Ph.D.",
     dept: "Materials Science & Engineering",
-    role: "Visiting Assistant Instructional Professor",
+    role: "Visiting Assistant Professor",
     course: "EMA 3010 · Materials",
     photo: "assets/img/headshots/sophia-ahmed.jpg",
     bio: "Dr. Ahmed's doctoral research examined salt hydrate eutectic phase change materials for thermal energy storage. Her interests span energy storage materials, phase transformations, engineering education, and STEM outreach.",
@@ -146,12 +146,12 @@ window.E3_FELLOWS = [
   {
     name: "Gayani Pathiraja, Ph.D.",
     dept: "Materials Science & Engineering",
-    role: "Visiting Assistant Instructional Professor",
+    role: "Visiting Assistant Professor",
     course: "EMA 3010 · Materials",
     photo: "assets/img/headshots/gayani-pathiraja.jpg",
     bio: "Dr. Pathiraja's research spans nanomaterials for sensing and wastewater treatment, thermally resistant materials for extreme environments, and the structure-property relationships of semiconductor nanomaterials.",
     bioFull: [
-      "Dr. Pathiraja is a Visiting Assistant Instructional Professor in the Department of Materials Science and Engineering at the University of Florida. She earned her Ph.D. in Nanoscience from the University of North Carolina at Greensboro, an M.Phil. from the University of Peradeniya, and a bachelor's degree in Materials Science and Technology from Uva Wellassa University, Sri Lanka.",
+      "Dr. Pathiraja is a Visiting Assistant Professor in the Department of Materials Science and Engineering at the University of Florida. She earned her Ph.D. in Nanoscience from the University of North Carolina at Greensboro, an M.Phil. from the University of Peradeniya, and a bachelor's degree in Materials Science and Technology from Uva Wellassa University, Sri Lanka.",
       "Her research spanned nanomaterials for sensing and wastewater treatment applications, thermally resistant materials for extreme environments, and the structure-property relationships of semiconductor nanomaterials. Before joining UF, she was a postdoctoral researcher at the Science and Technologies for Phosphorus Sustainability (STEPS) center, where she developed nanomaterials for selective adsorption and colorimetric detection of phosphates in environmental water.",
       "She also served as the core-facility transmission electron microscopy (TEM) lab manager at the Joint School of Nanoscience and Nanoengineering from 2022 to 2026. She draws on extensive experience in research, teaching, and student mentoring to cultivate the next generation of materials scientists and engineers."
     ],
@@ -162,7 +162,7 @@ window.E3_FELLOWS = [
   {
     name: "Mary Ifeoma Nwanua, Ph.D.",
     dept: "Engineering Leadership",
-    role: "Visiting Assistant Instructional Professor",
+    role: "Visiting Assistant Professor",
     course: "EGS 4034 · Engineering Ethics & Professionalism",
     photo: "assets/img/headshots/mary-nwanua.jpg",
     bio: "Dr. Nwanua's research focuses on developing future engineering and construction professionals and the competencies they need in an increasingly technology- and AI-enabled industry.",
@@ -178,7 +178,7 @@ window.E3_FELLOWS = [
   {
     name: "Jasmine Smith, Ph.D.",
     dept: "Engineering Innovation",
-    role: "Visiting Assistant Instructional Professor",
+    role: "Visiting Assistant Professor",
     course: "EGN 4643 · Engineering Innovation",
     photo: "assets/img/headshots/jasmine-smith.jpg",
     bio: "Dr. Smith works with students in the College of Engineering to develop innovative thinking through problem-based learning. Her research spans cognitive and social neuroscience, biomedical engineering, and engineering education.",
