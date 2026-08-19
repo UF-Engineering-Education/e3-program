@@ -31,7 +31,7 @@ window.E3_MENTORS = [
   {
     name: "Lilianny Virgüez, Ph.D.",
     dept: "Engineering Education",
-    role: "Engineering educator, first-year programs",
+    role: "Instructional Associate Professor",
     kind: "education",
     photo: "assets/img/headshots/lilianny-virguez.jpg",
     mentees: ["Logan Morton, Ph.D."],
