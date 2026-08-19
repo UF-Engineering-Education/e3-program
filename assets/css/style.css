@@ -1224,7 +1224,10 @@ a[target="_blank"]::after {
   max-width: 100%;
   margin: 0.3rem 0 0;
   padding: 0.2rem 0.6rem;
-  border-radius: 999px;
+  /* Modest radius, not a full pill: "Education & pedagogy expert" wraps to two
+     lines in a narrow card, and a pill only reads well on one line. Matches
+     the role badge directly above it. */
+  border-radius: var(--r-sm);
   font-size: 0.7rem;
   font-weight: 800;
   letter-spacing: 0.05em;

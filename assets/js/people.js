@@ -31,7 +31,7 @@ window.E3People = (function () {
   // host unit, one supplying engineering-education and pedagogy expertise.
   var KIND_LABELS = {
     domain: "Domain expert",
-    education: "Education & pedagogy"
+    education: "Education & pedagogy expert"
   };
 
   function iconFor(url) {

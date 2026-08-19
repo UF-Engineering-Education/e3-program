@@ -28,7 +28,22 @@
    =========================================================================== */
 
 window.E3_MENTORS = [
-  { name: "", dept: "Engineering Education", role: "", photo: "", bio: "", links: [] },
+  {
+    name: "Lilianny Virgüez, Ph.D.",
+    dept: "Engineering Education",
+    role: "Engineering educator, first-year programs",
+    kind: "education",
+    photo: "assets/img/headshots/lilianny-virguez.jpg",
+    mentees: ["Logan Morton, Ph.D."],
+    bio: "Dr. Virgüez is an engineering educator with several years of teaching experience at the first-year level. Her research interests include motivation to succeed in engineering, with a focus on first-year students.",
+    bioFull: [
+      "Dr. Virgüez is an engineering educator with several years of teaching experience at the first-year level. Her research interests include motivation to succeed in engineering with a focus on first-year students. She has work experience in the telecommunications industry.",
+      "Dr. Virgüez holds a Ph.D. in Engineering Education and a Master's degree in Management Systems Engineering from Virginia Tech, and a bachelor's degree in Telecommunications Engineering from the National Experimental University of the Armed Forces in Venezuela. She is a member of the American Society for Engineering Education (ASEE)."
+    ],
+    links: [
+      { label: "Faculty profile", url: "https://eed.eng.ufl.edu/people/faculty/name/lilianny-virguez/" }
+    ]
+  },
   { name: "", dept: "Chemical Engineering", role: "", photo: "", bio: "", links: [] },
   { name: "", dept: "Chemical Engineering", role: "", photo: "", bio: "", links: [] },
   {
@@ -51,8 +66,39 @@ window.E3_MENTORS = [
       { label: "Faculty profile", url: "https://bme.ufl.edu/people/faculty/name/walter-murfee/" }
     ]
   },
-  { name: "", dept: "Biomedical Engineering", role: "", photo: "", bio: "", links: [] },
-  { name: "", dept: "Biomedical Engineering", role: "", photo: "", bio: "", links: [] },
+  {
+    name: "May Mansy, Ph.D.",
+    dept: "Biomedical Engineering",
+    role: "Instructional Associate Professor, Director of Peer Learning and Mentoring, and J. Crayton Pruitt Family Term Fellow",
+    kind: "education",
+    photo: "assets/img/headshots/may-mansy.jpg",
+    mentees: ["Jessica Sena, Ph.D."],
+    bio: "Dr. Mansy is the primary instructor for Biomedical Instrumentation, Biomedical Signals and Systems, and Educational Methods for BME Learning Assistants, and founded the department's Learning Assistant program.",
+    bioFull: [
+      "Dr. Mansy's doctoral research is motivated by recording neural activity on the ensemble and cellular levels, using optical methods like two-photon imaging, epi-fluorescent imaging, and Fiber Photometry. Her focus is the systematic device characterization of Fiber Photometry, appraising its sensitivity, dynamic range, and spatial detection extent. Mansy is well-versed in a wide range of neuroscience research techniques, including stereotaxic cranial surgery and implants, histological analysis, neural data analysis, neural device design, and peripheral nerve surgery and stimulation. While completing her Ph.D. in Biomedical Engineering, Mansy was a teaching assistant for three graduate and undergraduate courses with the Biomedical Engineering department and the Electrical and Computer Engineering department at UF.",
+      "Dr. Mansy is currently the primary instructor for Biomedical Instrumentation (lecture and lab), Biomedical Signals and Systems, and Educational Methods for BME Learning Assistants. She views teaching as an art extending existing cognitive frameworks in students' minds. As a trained neuroscientist, her approach integrates neural insights with Kolb's Experiential Learning Theory, focusing on a four-stage learning cycle: concrete experience, reflective observation, abstract hypothesis formulation, and active testing. She supports this cycle through diverse classroom experiences tailored to individual learning styles, fostering sensory engagement to optimize memory and attention. She promotes reflective and abstract thinking through personalized interactions and collaborative problem-solving, aiming to resonate with students' interests and emotional drivers, encouraging more profound understanding and retention. Mansy's methods not only aim to fulfill academic goals but also nurture a supportive, emotionally aware educational environment, ensuring that students are academically and holistically prepared for their futures.",
+      "Mansy is the founder, developer, and driver of a BME Learning Assistant program and has been successfully running it since Fall 2021. The LA model is a collaborative learning strategy that aims to train undergraduate frontrunners who succeeded in a course with a strong showing to assist the next cohort of students in learning the course content. The BME LA program is the first LA program in the Herbert Wertheim College of Engineering at the University of Florida and, according to the LAA database, the only discipline-specific LA program for Biomedical Engineering. The program trains undergraduate frontrunners on research-based learning strategies to help their peers navigate foundational BME courses."
+    ],
+    links: [
+      { label: "Faculty profile", url: "https://bme.ufl.edu/people/faculty/name/may-mansy/" }
+    ]
+  },
+  {
+    name: "Ana Maria Porras, Ph.D.",
+    dept: "Biomedical Engineering",
+    role: "Assistant Professor & J. Crayton Pruitt Family Term Fellow",
+    kind: "education",
+    photo: "assets/img/headshots/ana-porras.jpg",
+    mentees: ["Bryce Shirk, Ph.D."],
+    bio: "Dr. Porras leads the Tissue-Microbe Interactions lab, engineering in vitro models of disease to study human-microbe interactions across the microbiome, global health, and infectious disease.",
+    bioFull: [
+      "Dr. Porras leads the Tissue-Microbe Interactions lab, specialized in engineering in vitro models of disease to study human-microbe interactions. She is particularly interested in understanding how microbes interact with human extracellular matrix to drive disease in the contexts of the microbiome, global health, and infectious disease.",
+      "Dr. Porras is also a science artist and an expert on inclusive multilingual science communication."
+    ],
+    links: [
+      { label: "Faculty profile", url: "https://bme.ufl.edu/people/faculty/name/ana-porras/" }
+    ]
+  },
   { name: "", dept: "Materials Science & Engineering", role: "", photo: "", bio: "", links: [] },
   { name: "", dept: "Materials Science & Engineering", role: "", photo: "", bio: "", links: [] },
   { name: "", dept: "Engineering Leadership", role: "", photo: "", bio: "", links: [] },
