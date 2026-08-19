@@ -27,6 +27,13 @@ window.E3People = (function () {
     return Boolean(person.name && person.name.trim());
   }
 
+  // Every Fellow gets two mentors: one supplying domain expertise from their
+  // host unit, one supplying engineering-education and pedagogy expertise.
+  var KIND_LABELS = {
+    domain: "Domain expert",
+    education: "Education & pedagogy"
+  };
+
   function iconFor(url) {
     return /linkedin\.com/i.test(url) ? ICON_LINKEDIN : ICON_GLOBE;
   }
@@ -35,6 +42,24 @@ window.E3People = (function () {
     return (person.links || []).filter(function (l) {
       return l && l.url && l.label;
     });
+  }
+
+  // The fellows a mentor is paired with, as chips. Shared by the card and the
+  // dialog so the two cannot drift apart.
+  function menteeChips(person) {
+    var list = person.mentees || [];
+    if (!list.length) return "";
+    return (
+      '<div class="mentees">' +
+      '<p class="mentees__label">Mentoring</p>' +
+      '<ul class="chips">' +
+      list
+        .map(function (m) {
+          return '<li class="chip chip--mentee">' + esc(m) + "</li>";
+        })
+        .join("") +
+      "</ul></div>"
+    );
   }
 
   // Icon-only profile links, shared by the card and the dialog. An icon has no
@@ -188,18 +213,23 @@ window.E3People = (function () {
         : "";
 
       var links = iconLinks(person);
+      var mentees = menteeChips(person);
 
       d.querySelector(".person-dialog__body").innerHTML =
-        // Photo and its icon links share one column, so the links sit
+        // Photo, icon links and mentee chips share one column, so they sit
         // directly beneath the headshot rather than after the bio.
-        (photo || links
-          ? '<div class="person-dialog__aside">' + photo + links + "</div>"
+        (photo || links || mentees
+          ? '<div class="person-dialog__aside">' + photo + links + mentees + "</div>"
           : "") +
         '<div class="person-dialog__text">' +
         '<h2 class="person-dialog__name">' + esc(person.name) + "</h2>" +
         '<p class="person-dialog__dept">' + esc(person.dept) + "</p>" +
         (person.role
           ? '<p class="person-dialog__role">' + esc(person.role) + "</p>"
+          : "") +
+        (KIND_LABELS[person.kind]
+          ? '<p class="fellow__kind fellow__kind--' + esc(person.kind) + '">' +
+            esc(KIND_LABELS[person.kind]) + "</p>"
           : "") +
         paras.map(function (p) { return "<p>" + esc(p) + "</p>"; }).join("") +
         "</div>";
@@ -224,6 +254,13 @@ window.E3People = (function () {
       var role = person.role
         ? '<p class="fellow__role">' + esc(person.role) + "</p>"
         : "";
+
+      var kind = KIND_LABELS[person.kind]
+        ? '<p class="fellow__kind fellow__kind--' + esc(person.kind) + '">' +
+          esc(KIND_LABELS[person.kind]) + "</p>"
+        : "";
+
+      var mentees = menteeChips(person);
 
       var bio = person.bio
         ? '<p class="fellow__bio">' + esc(person.bio) + "</p>"
@@ -256,7 +293,9 @@ window.E3People = (function () {
         esc(person.dept) +
         "</p>" +
         role +
+        kind +
         bio +
+        mentees +
         // One footer row: the button on the left, icon links pushed right.
         // Rendered only when there is something to put in it.
         (more || links
