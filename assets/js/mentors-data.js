@@ -95,6 +95,22 @@ window.E3_MENTORS = [
     ]
   },
   {
+    name: "Laura Melissa Cruz Castro, Ph.D.",
+    dept: "Engineering Education",
+    role: "Instructional Assistant Professor",
+    kind: "domain",
+    photo: "assets/img/headshots/laura-cruz-castro.png",
+    mentees: ["Bárbara Fagundes, Ph.D."],
+    bio: "Dr. Cruz Castro's work focuses on engineering education, student success, and expanding opportunities for underrepresented students in STEM.",
+    bioFull: [
+      "Dr. Laura Cruz Castro is a faculty member at the University of Florida whose work focuses on engineering education, student success, and expanding opportunities for underrepresented students in STEM.",
+      "Through her teaching and mentorship, she is dedicated to supporting the academic and professional development of engineering students and fostering inclusive learning environments."
+    ],
+    links: [
+      { label: "Faculty profile", url: "https://eed.eng.ufl.edu/people/faculty/name/laura-cruz-castro/" }
+    ]
+  },
+  {
     name: "Dmitry Kopelevich, Ph.D.",
     dept: "Chemical Engineering",
     role: "Associate Chair for Undergraduate Studies & Instructional Professor, Harry and Bertha Bernstein Professor",
@@ -145,6 +161,28 @@ window.E3_MENTORS = [
     ],
     links: [
       { label: "Faculty profile", url: "https://bme.ufl.edu/people/faculty/name/walter-murfee/" }
+    ]
+  },
+  {
+    name: "Chris Geiger, Ph.D.",
+    dept: "Biomedical Engineering",
+    role: "Instructional Associate Professor & Associate Chair for Undergraduate Studies",
+    kind: "domain",
+    photo: "assets/img/headshots/chris-geiger.jpg",
+    mentees: [
+      "Bryce Shirk, Ph.D.",
+      "Jessica Sena, Ph.D.",
+      "Michael “Mike” Strinden, Ph.D."
+    ],
+    bio: "Dr. Geiger leads the department's Senior Design Program and brings 15+ years of experience in engineering design, cellular and tissue engineering, and engineering fundamentals.",
+    bioFull: [
+      "Dr. Geiger earned his Ph.D. in Biomedical Engineering from Northwestern University in 2003, studying under the guidance of Dr. Matt Glucksberg and Dr. Chris Waters. His doctoral research demonstrated his early dedication to advancing our understanding of critical biomedical phenomena. His academic journey also includes a Master of Science in Biomedical Engineering and a Bachelor of Science in Chemical Engineering, both from Northwestern University.",
+      "As one of the founding faculty members of the Bioengineering program at Florida Gulf Coast University (FGCU), Dr. Geiger played an instrumental role in its growth and development, including the development of the initial Bioengineering curriculum and the teaching of various engineering courses. Having witnessed the continued growth and success of the UF BME program over the past 15 years, he views his appointment as a natural progression of his career, aligning with his skills and passions.",
+      "Over the past 15+ years, he has nurtured a diverse range of students, bringing expertise in areas such as engineering design, cellular and tissue engineering, and engineering fundamentals.",
+      "In his current capacity, Dr. Geiger spearheads the Senior Design Program, a pivotal initiative that empowers students to devise solutions to real-world challenges. This role equips them with a robust foundation in intellectual property, engineering economics, federal regulations, reimbursement principles, and business planning, positioning them for success in a dynamic engineering landscape."
+    ],
+    links: [
+      { label: "Faculty profile", url: "https://bme.ufl.edu/people/faculty/name/chris-geiger/" }
     ]
   },
   {
@@ -261,6 +299,23 @@ window.E3_MENTORS = [
     ],
     links: [
       { label: "Faculty profile", url: "https://www.eng.ufl.edu/innovation/about/meet-the-team/melissa-white/" }
+    ]
+  },
+  {
+    name: "Jad Atweh, Ph.D.",
+    dept: "Industrial & Systems Engineering",
+    role: "Instructional Assistant Professor & Assistant Chair for Undergraduate Research & Study Abroad",
+    kind: "education",
+    photo: "assets/img/headshots/jad-atweh.jpg",
+    mentees: ["Bárbara Fagundes, Ph.D."],
+    bio: "Dr. Atweh researches human factors and ergonomics, focusing on how teams interact with technology in high-stakes complex systems. He also conducts engineering education research and holds over ten teaching certificates.",
+    bioFull: [
+      "Dr. Jad Atweh is an Instructional Assistant Professor in the Department of Industrial and Systems Engineering at the University of Florida. His research focuses on human factors and ergonomics, with an emphasis on improving how teams interact with technology in high-stakes complex systems.",
+      "His work combines eye tracking, nonlinear dynamical systems methods, and cognitive systems engineering to design better and smarter displays that support team coordination, situation awareness, and decision-making across complex domains such as unmanned aerial vehicle systems, driving, healthcare, and space operations.",
+      "Dr. Atweh teaches undergraduate and graduate courses in human factors and ergonomics, systems design, and occupational safety. He integrates state-of-the-art teaching pedagogy into the classroom, holds over ten teaching certificates, and conducts research on engineering education to enhance student learning and engagement."
+    ],
+    links: [
+      { label: "Faculty profile", url: "https://faculty.eng.ufl.edu/jad-atweh/" }
     ]
   }
 ];
