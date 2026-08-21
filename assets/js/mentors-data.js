@@ -44,8 +44,89 @@ window.E3_MENTORS = [
       { label: "Faculty profile", url: "https://eed.eng.ufl.edu/people/faculty/name/lilianny-virguez/" }
     ]
   },
-  { name: "", dept: "Chemical Engineering", role: "", photo: "", bio: "", links: [] },
-  { name: "", dept: "Chemical Engineering", role: "", photo: "", bio: "", links: [] },
+  {
+    name: "Sindia Rivera-Jiménez, Ph.D.",
+    dept: "Engineering Education",
+    role: "Assistant Professor",
+    kind: "education",
+    photo: "assets/img/headshots/sindia-rivera-jimenez.jpg",
+    mentees: ["Yu Zhang, Ph.D."],
+    bio: "Dr. Rivera-Jiménez studies how engineering communities enact agency in participatory and transformational change, and how professional development shapes organizational cultures and broadens engagement in engineering.",
+    bioFull: [
+      "Dr. Rivera-Jiménez is an assistant professor in the Department of Engineering Education and an affiliate faculty member of the Department of Chemical Engineering at the University of Florida. Her research focuses on understanding the role of engineering communities while enacting their agency in participatory and transformational change.",
+      "She is particularly interested in understanding how professional development influences organizational cultures and promotes wider engagement in engineering. As an education practitioner, she also explores evidence-based practices to integrate teamwork, ethical awareness, and effective collaboration into the curriculum.",
+      "Dr. Rivera-Jiménez graduated from the University of Puerto Rico at Mayagüez with a B.S. and Ph.D. in Chemical Engineering. She earned an NSF RIEF award recognizing her effort in transitioning from a meaningful ten-year teaching faculty career into engineering education research. Before her current role, she taught STEM courses at many institutions, including Hispanic-serving institutions (HSIs), community colleges, and R1 public universities."
+    ],
+    links: [
+      { label: "Faculty profile", url: "https://eed.eng.ufl.edu/people/faculty/name/sindia-rivera-jimenez/" }
+    ]
+  },
+  {
+    name: "Andrea Ramirez-Salgado, Ph.D.",
+    dept: "Engineering Education",
+    role: "Lead for Convergent Engineering Education Initiatives & Instructional Assistant Professor",
+    kind: "education",
+    photo: "assets/img/headshots/andrea-ramirez-salgado.jpg",
+    mentees: ["Mary Ifeoma Nwanua, Ph.D."],
+    bio: "Dr. Ramirez-Salgado holds degrees in Computer Science Engineering and Educational Technologies, and designs meaningful, engaging learning experiences for all students, including those with diverse learning needs.",
+    bioFull: [
+      "Andrea Ramirez-Salgado is an instructional assistant professor in the Department of Engineering Education at the University of Florida Herbert Wertheim College of Engineering. With degrees in Computer Science Engineering and Educational Technologies, she strives to create meaningful and engaging learning experiences for all students, including those with diverse learning needs.",
+      "She has over 15 years of experience teaching in higher education, including courses on artificial intelligence, data science, algorithms, data structures, software engineering, and educational technologies. She is currently part of an NSF-funded grant team developing hands-on, gamified, and equity-based AI curricula."
+    ],
+    links: [
+      { label: "Faculty profile", url: "https://eed.eng.ufl.edu/people/faculty/name/andrea-ramirez-salgado/" }
+    ]
+  },
+  {
+    name: "Juan Gilbert, Ph.D.",
+    dept: "Engineering Education",
+    role: "The Andrew Banks Family Preeminence Endowed Professor",
+    kind: "education",
+    photo: "assets/img/headshots/juan-gilbert.jpg",
+    mentees: ["Jasmine Smith, Ph.D."],
+    bio: "Dr. Gilbert leads the Computing for Social Good Lab and was named a laureate of the National Medal of Technology and Innovation for pioneering universal design in elections technology.",
+    bioFull: [
+      "Dr. Gilbert is The Andrew Banks Family Preeminence Endowed Professor at the University of Florida, where he leads the Computing for Social Good Lab. He has research projects in election security, usability, and accessibility; advanced learning technologies; human-centered AI and machine learning; and ethnocomputing (culturally relevant computing).",
+      "He is the inventor of Prime III, an open-source, secure, and accessible voting technology, and the first open-source voting system to be used in state, local, and federal elections in the U.S.A. Gilbert was named a laureate of the National Medal of Technology and Innovation by President Joe Biden for pioneering and championing universal design in elections technology to make voting accessible for everyone and increasing diversity in the computer science workforce.",
+      "Gilbert is a Fellow of the Association for Computing Machinery (ACM), a Fellow of the American Association for the Advancement of Science (AAAS), a Fellow of the IEEE, and a Fellow of the National Academy of Inventors (NAI)."
+    ],
+    links: [
+      { label: "Faculty profile", url: "https://eed.eng.ufl.edu/people/faculty/name/juan-gilbert/" }
+    ]
+  },
+  {
+    name: "Dmitry Kopelevich, Ph.D.",
+    dept: "Chemical Engineering",
+    role: "Associate Chair for Undergraduate Studies & Instructional Professor, Harry and Bertha Bernstein Professor",
+    kind: "domain",
+    photo: "assets/img/headshots/dmitry-kopelevich.png",
+    mentees: ["Yu Zhang, Ph.D."],
+    bio: "Dr. Kopelevich's research is a theoretical and computational investigation of transport phenomena and non-equilibrium processes in nano- and microscale systems, using molecular and Brownian dynamics alongside analytical tools.",
+    bioFull: [
+      "Dr. Kopelevich's research focuses on theoretical and computational investigation of transport phenomena and non-equilibrium processes in nano- and microscale systems. His group applies simulation methods such as molecular and Brownian dynamics, as well as theoretical tools, to systems whose understanding is of significant scientific and technological importance.",
+      "In self-assembled surfactant systems, amphiphilic molecules containing both hydrophobic and hydrophilic segments spontaneously assemble in aqueous solution into microstructures used as drug delivery vehicles and as templates for advanced nanostructured materials. Similar structures, such as lipid bilayers, are building blocks of biological systems. Because the dynamics of self-assembly and the transitions between structures matter in all of these settings, his group works to understand the molecular mechanisms behind them — in particular the formation and break-up of micelles and the dynamics of lipid membranes.",
+      "A second line of work examines DNA transport in microfluidic devices, which enable efficient and inexpensive analysis and processing of macromolecules for biomedical applications. Transport and separation of polyelectrolytes such as DNA in these devices is often facilitated by an applied electric field. In collaboration with Prof. Butler, this project aims to understand the effects of electric fields and other factors on molecular transport, with a focus on developing an accurate model for electrohydrodynamic interactions in polyelectrolytes.",
+      "A third project addresses non-Brownian suspensions, which have applications ranging from pharmaceutical to oil industries. When suspended particles are large enough that thermal Brownian forces are negligible, they are nevertheless observed to undergo diffusive motion. Also in collaboration with Prof. Butler, his group applies tools of statistical mechanics to investigate the fundamental mechanisms of this diffusion, and to explain counterintuitive experimental observations such as increasing particle roughness leading to lower diffusivity."
+    ],
+    links: [
+      { label: "Faculty profile", url: "https://che.ufl.edu/people/faculty/name/dmitry-kopelevich/" }
+    ]
+  },
+  {
+    name: "Vincent “VJ” Tocco, Jr., Ph.D.",
+    dept: "Chemical Engineering",
+    role: "Undergraduate Program Coordinator & Instructional Assistant Professor",
+    kind: "domain",
+    photo: "assets/img/headshots/vincent-tocco.png",
+    mentees: ["Logan Morton, Ph.D."],
+    bio: "Dr. Tocco is a graduate of the UF Chemical Engineering Ph.D. program whose passion for teaching and mentoring earned him the Ray W. Fahien Graduate Teaching Award twice.",
+    bioFull: [
+      "Dr. Vincent Tocco, Jr., is a graduate of the UF Chemical Engineering Ph.D. program. His passion for teaching and mentoring led him to excel as a teaching assistant and mentor to undergraduates, high school students, and teachers in research, and to develop a one-semester weekly seminar aimed at new Ph.D. students. He was twice recognized with the Ray W. Fahien Graduate Teaching Award."
+    ],
+    links: [
+      { label: "Faculty profile", url: "https://che.ufl.edu/people/faculty/name/vincent-tocco/" }
+    ]
+  },
   {
     name: "Walter Lee Murfee, Ph.D.",
     dept: "Biomedical Engineering",
@@ -99,8 +180,87 @@ window.E3_MENTORS = [
       { label: "Faculty profile", url: "https://bme.ufl.edu/people/faculty/name/ana-porras/" }
     ]
   },
-  { name: "", dept: "Materials Science & Engineering", role: "", photo: "", bio: "", links: [] },
-  { name: "", dept: "Materials Science & Engineering", role: "", photo: "", bio: "", links: [] },
-  { name: "", dept: "Engineering Leadership", role: "", photo: "", bio: "", links: [] },
-  { name: "", dept: "Engineering Innovation", role: "", photo: "", bio: "", links: [] }
+  {
+    name: "Nancy Ruzycki, Ph.D.",
+    dept: "Materials Science & Engineering",
+    role: "Instructional Associate Professor & Director of Undergraduate Laboratories",
+    kind: "education",
+    photo: "assets/img/headshots/nancy-ruzycki.jpg",
+    mentees: ["Sophia Ahmed, Ph.D."],
+    bio: "Dr. Ruzycki directs undergraduate laboratories in Materials Science & Engineering and is principal investigator on the EQuIPD grant at UF. Her research focuses on engineering education and the use of models, process maps, and systems thinking in teaching.",
+    bioFull: [
+      "Dr. Nancy Ruzycki is an instructional associate professor, director of undergraduate laboratories, and the principal investigator on the EQuIPD Grant at UF within the Department of Materials Science and Engineering in the Herbert Wertheim College of Engineering. She has received over 7 million dollars in funding for her work.",
+      "Her research is focused on engineering education and the use of models, process maps, and system thinking in teaching. Dr. Ruzycki holds a Ph.D. in Physics from Tulane University, is a certified teacher, and holds National Board Certification in Physics. She is a “Modeler” and has trained at Florida International University for Modeling Physics."
+    ],
+    links: [
+      { label: "Faculty profile", url: "https://mse.ufl.edu/people/name/nancy-ruzycki/" }
+    ]
+  },
+  {
+    name: "Simon R. Phillpot, Ph.D.",
+    dept: "Materials Science & Engineering",
+    role: "Associate Department Chair & Distinguished Professor",
+    kind: "domain",
+    photo: "assets/img/headshots/simon-phillpot.jpg",
+    mentees: ["Gayani Pathiraja, Ph.D.", "Sophia Ahmed, Ph.D."],
+    bio: "Dr. Phillpot works in computational materials science, with research spanning interfaces in materials, ferroelectrics, complex oxides, polycrystalline and nanocrystalline materials, and thermal transport.",
+    bioFull: [
+      "Dr. Phillpot is Associate Department Chair and a Distinguished Professor in the Department of Materials Science and Engineering at the University of Florida. His research is in computational materials science, covering interfaces in materials, ferroelectrics, complex oxides, polycrystalline and nanocrystalline materials, and thermal transport.",
+      "He earned his Ph.D. from the University of Florida in 1985."
+    ],
+    links: [
+      { label: "Faculty profile", url: "https://mse.ufl.edu/people/name/simon-phillpot/" }
+    ]
+  },
+  {
+    name: "Ira Harkness, Ph.D.",
+    dept: "Materials Science & Engineering",
+    role: "Nuclear Engineering Undergraduate Coordinator & Instructional Associate Professor",
+    kind: "education",
+    photo: "assets/img/headshots/ira-harkness.jpg",
+    mentees: ["Gayani Pathiraja, Ph.D."],
+    bio: "Dr. Harkness brings two decades of experience in higher education to his teaching, with expertise in computational nuclear engineering and nuclear engineering education.",
+    bioFull: [
+      "Ira Harkness is an Instructional Associate Professor in the Department of Materials Science and Engineering. He has two decades of experience in higher education, including managing information technology and facilities efforts at UF, and working with non-profits and community organizations to address K-12 education. His expertise is in computational nuclear engineering and nuclear engineering education.",
+      "He earned his B.S. in Materials Science and Engineering from the University of Florida in 2007, then completed his M.S. in Digital Forensics from the University of Central Florida in 2011. During that time he developed forensic tools, performed verification and validation of tools, and learned how to properly handle digital evidence.",
+      "He received his Ph.D. in nuclear engineering from the University of Florida in 2018 under the mentorship of Dr. Andreas Enqvist, developing safeguards approaches for spent nuclear fuel in dry cask storage. His Ph.D. was only possible with significant support from the University of Florida Employee Education Program."
+    ],
+    links: [
+      { label: "Faculty profile", url: "https://mse.ufl.edu/people/name/ira-harkness/" },
+      { label: "Personal website", url: "https://harkness.mse.ufl.edu/" }
+    ]
+  },
+  {
+    name: "Rachel Frazier, Ph.D.",
+    dept: "Engineering Leadership",
+    role: "Associate Professor & Gene Fraser Teaching Professor",
+    kind: "domain",
+    photo: "assets/img/headshots/rachel-frazier.png",
+    mentees: ["Mary Ifeoma Nwanua, Ph.D."],
+    bio: "Dr. Frazier teaches ethics and leadership at UF’s Engineering Leadership Institute, using experiential learning, flipped classrooms, and gamified concepts to prepare students for real-world challenges.",
+    bioFull: [
+      "Dr. Rachel Frazier, a three-time Gator graduate, is an educator, researcher, and entrepreneur who thrives at the intersection of innovation and ethical leadership. As a Gene Fraser Teaching Professor at the University of Florida’s Engineering Leadership Institute, she brings energy and creativity to ethics and leadership education, using experiential learning, flipped classrooms, and gamified concepts to prepare students to tackle real-world challenges.",
+      "With expertise spanning materials science, entrepreneurship, and education, Dr. Frazier extends her impact beyond the classroom, contributing to research, publications, ethics competitions, professional development initiatives, non-profit boards, and community workshops to inspire collaboration and drive meaningful change."
+    ],
+    links: [
+      { label: "Faculty profile", url: "https://www.eng.ufl.edu/leadership/about/meet-the-team/rachel-frazier/" }
+    ]
+  },
+  {
+    name: "Melissa White, Ph.D.",
+    dept: "Engineering Innovation",
+    role: "Senior Lecturer",
+    kind: "domain",
+    photo: "assets/img/headshots/melissa-white.png",
+    mentees: ["Jasmine Smith, Ph.D."],
+    bio: "Dr. White develops and teaches the Engineering Innovation and Engineering Entrepreneurship curriculum, working with faculty and students to build creativity, innovation, and entrepreneurship across campus and in the community.",
+    bioFull: [
+      "Dr. White develops and instructs the course curriculum in Engineering Innovation and Engineering Entrepreneurship for students in the Herbert Wertheim College of Engineering. She works with faculty and students to build creativity, innovation, and entrepreneurship across campus and in the community.",
+      "She received her Bachelor of Science degree in Biomedical Engineering with a minor in Anthropology from the University of Miami. She then completed her Master of Science degree in Engineering, Science, Technology, and Entrepreneurship from the University of Notre Dame, and earned her doctorate in Industrial and Systems Engineering, along with a certificate in Health Systems Engineering, from North Carolina State University.",
+      "Prior to joining UF, Dr. White helped co-found the non-profit Medical Innovators Collaborative (MEDIC), whose goal is to create an environment where students across the universities in the Research Triangle can collaborate with clinicians and industry partners to foster medical innovations."
+    ],
+    links: [
+      { label: "Faculty profile", url: "https://www.eng.ufl.edu/innovation/about/meet-the-team/melissa-white/" }
+    ]
+  }
 ];
