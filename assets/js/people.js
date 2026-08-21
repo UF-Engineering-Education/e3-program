@@ -34,6 +34,25 @@ window.E3People = (function () {
     education: "Education & pedagogy expert"
   };
 
+  // Cards read as a directory, so they are ordered by first name: the leading
+  // word of the name, ahead of any nickname, surname or credentials.
+  function firstName(person) {
+    return String(person.name || "").trim().split(/\s+/)[0] || "";
+  }
+
+  function compare(a, b) {
+    return a.localeCompare(b, "en", { sensitivity: "base" });
+  }
+
+  // Ties on the first name fall back to the full name, so the order is stable
+  // however the browser implements sort.
+  function byFirstName(a, b) {
+    return (
+      compare(firstName(a), firstName(b)) ||
+      compare(String(a.name || ""), String(b.name || ""))
+    );
+  }
+
   function iconFor(url) {
     return /linkedin\.com/i.test(url) ? ICON_LINKEDIN : ICON_GLOBE;
   }
@@ -339,9 +358,11 @@ window.E3People = (function () {
               return p.dept === dept;
             });
 
-      // Announced profiles fill the grid from the top left, with the
-      // still-to-be-named placeholders after them. Partitioning rather than
-      // sorting keeps each group in its authored (department) order.
+      // Announced profiles fill the grid from the top left, in first-name
+      // order, with the still-to-be-named placeholders after them. The data
+      // files stay grouped by department for editing; the display order is
+      // decided here.
+      list = list.slice().sort(byFirstName);
       list = list.filter(isNamed).concat(
         list.filter(function (p) {
           return !isNamed(p);

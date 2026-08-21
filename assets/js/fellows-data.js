@@ -21,7 +21,8 @@
               Omit it and the card is not clickable.
      links  - optional array of { label, url }, e.g. a lab site or profile.
 
-   Cards render in the order listed here.
+   Cards render in first-name order, whatever order they are listed in here,
+   so keep this file grouped however is easiest to edit.
    =========================================================================== */
 
 window.E3_DEPARTMENTS = [
