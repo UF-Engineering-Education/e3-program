@@ -248,6 +248,9 @@
 <script src="assets/js/main.js"></script>
 <script src="assets/js/people.js"></script>
 <script src="assets/js/fellows-data.js"></script>
+<!-- Mentor pairings are authored in mentors-data.js; the cards read the fellow
+     side of them from there. -->
+<script src="assets/js/mentors-data.js"></script>
 <script>
 E3People.render({
   grid: "fellows-grid",
@@ -256,6 +259,7 @@ E3People.render({
   tally: "dept-tally",
   people: window.E3_FELLOWS,
   departments: window.E3_DEPARTMENTS,
+  pairings: window.E3_MENTORS,
   singular: "fellow",
   plural: "fellows",
   allLabel: "All fellows",

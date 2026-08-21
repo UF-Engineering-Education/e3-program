@@ -44,18 +44,18 @@ window.E3People = (function () {
     });
   }
 
-  // The fellows a mentor is paired with, as chips. Shared by the card and the
-  // dialog so the two cannot drift apart.
-  function menteeChips(person) {
-    var list = person.mentees || [];
-    if (!list.length) return "";
+  // One side of a pairing, as chips: the fellows a mentor is mentoring, or the
+  // mentors a fellow is paired with. Shared by the card and the dialog so the
+  // two cannot drift apart.
+  function pairChips(label, names) {
+    if (!names || !names.length) return "";
     return (
-      '<div class="mentees">' +
-      '<p class="mentees__label">Mentoring</p>' +
+      '<div class="pairings">' +
+      '<p class="pairings__label">' + esc(label) + "</p>" +
       '<ul class="chips">' +
-      list
-        .map(function (m) {
-          return '<li class="chip chip--mentee">' + esc(m) + "</li>";
+      names
+        .map(function (n) {
+          return '<li class="chip chip--pairing">' + esc(n) + "</li>";
         })
         .join("") +
       "</ul></div>"
@@ -115,6 +115,24 @@ window.E3People = (function () {
     people.forEach(function (p) {
       if (p.dept && departments.indexOf(p.dept) === -1) departments.push(p.dept);
     });
+
+    // Pairings are authored once, on the mentor, in `mentees`. The Fellows page
+    // passes the mentors through `cfg.pairings` so each fellow card can show
+    // the other side of that same pairing without a second copy of the data.
+    var mentorsOf = Object.create(null);
+    (cfg.pairings || []).forEach(function (mentor) {
+      if (!isNamed(mentor)) return;
+      (mentor.mentees || []).forEach(function (fellow) {
+        (mentorsOf[fellow] = mentorsOf[fellow] || []).push(mentor.name);
+      });
+    });
+
+    function pairingsFor(person) {
+      return (
+        pairChips("Mentoring", person.mentees) +
+        pairChips("Mentored by", isNamed(person) ? mentorsOf[person.name] : null)
+      );
+    }
 
     function countIn(dept) {
       return people.filter(function (p) {
@@ -213,13 +231,13 @@ window.E3People = (function () {
         : "";
 
       var links = iconLinks(person);
-      var mentees = menteeChips(person);
+      var pairings = pairingsFor(person);
 
       d.querySelector(".person-dialog__body").innerHTML =
-        // Photo, icon links and mentee chips share one column, so they sit
+        // Photo, icon links and pairing chips share one column, so they sit
         // directly beneath the headshot rather than after the bio.
-        (photo || links || mentees
-          ? '<div class="person-dialog__aside">' + photo + links + mentees + "</div>"
+        (photo || links || pairings
+          ? '<div class="person-dialog__aside">' + photo + links + pairings + "</div>"
           : "") +
         '<div class="person-dialog__text">' +
         '<h2 class="person-dialog__name">' + esc(person.name) + "</h2>" +
@@ -260,7 +278,7 @@ window.E3People = (function () {
           esc(KIND_LABELS[person.kind]) + "</p>"
         : "";
 
-      var mentees = menteeChips(person);
+      var pairings = pairingsFor(person);
 
       var bio = person.bio
         ? '<p class="fellow__bio">' + esc(person.bio) + "</p>"
@@ -295,7 +313,7 @@ window.E3People = (function () {
         role +
         kind +
         bio +
-        mentees +
+        pairings +
         // One footer row: the button on the left, icon links pushed right.
         // Rendered only when there is something to put in it.
         (more || links
