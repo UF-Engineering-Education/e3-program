@@ -111,6 +111,23 @@ window.E3_MENTORS = [
     ]
   },
   {
+    name: "Idalis Villanueva Alarcón, Ph.D.",
+    dept: "Engineering Education",
+    role: "Chair & Professor",
+    kind: "education",
+    photo: "assets/img/headshots/idalis-villanueva-alarcon.jpg",
+    mentees: ["Michael “Mike” Strinden, Ph.D."],
+    bio: "Dr. Villanueva Alarcón studies hidden curriculum in engineering, mentoring in science and engineering, and motivation and learning pathways using mixed- and multi-modal tools. She received the PECASE award in 2019.",
+    bioFull: [
+      "Idalis Villanueva Alarcón, Ph.D., joined the Engineering Education Department at the University of Florida in Gainesville in summer 2020 as an Associate Professor. Prior to this position, she was an Assistant Professor of Engineering Education at Utah State University, and before that a Lecturer in the Fischell Department of Bioengineering at the University of Maryland at College Park.",
+      "She has a Ph.D. in Chemical and Biological Engineering from the University of Colorado-Boulder and a postdoctoral degree in Analytical Cell Biology from the National Institutes of Health. Her research interests include hidden curriculum in engineering, mentoring students in science and engineering, and the study of motivation and learning pathways in science and engineering education using mixed- and multi-modal tools (biological and physiological).",
+      "In 2019, she received the Presidential Early Career Award for Scientists and Engineers (PECASE) for her 2017 NSF CAREER project on hidden curriculum in engineering."
+    ],
+    links: [
+      { label: "Faculty profile", url: "https://eed.eng.ufl.edu/people/faculty/name/idalis-villanueva-alarcon/" }
+    ]
+  },
+  {
     name: "Dmitry Kopelevich, Ph.D.",
     dept: "Chemical Engineering",
     role: "Associate Chair for Undergraduate Studies & Instructional Professor, Harry and Bertha Bernstein Professor",
