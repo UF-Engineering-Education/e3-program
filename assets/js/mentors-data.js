@@ -31,14 +31,14 @@ window.E3_MENTORS = [
   {
     name: "Lilianny Virgüez, Ph.D.",
     dept: "Engineering Education",
-    role: "Instructional Associate Professor",
+    role: "Associate Instructional Professor",
     kind: "education",
     photo: "assets/img/headshots/lilianny-virguez.jpg",
     mentees: ["Logan Morton, Ph.D."],
-    bio: "Dr. Virgüez is an engineering educator with several years of teaching experience at the first-year level. Her research interests include motivation to succeed in engineering, with a focus on first-year students.",
+    bio: "Dr. Virgüez designs meaningful learning experiences that prepare students for a rapidly evolving technological workforce. Her work spans engineering education, curriculum development, online learning, and artificial intelligence in education.",
     bioFull: [
-      "Dr. Virgüez is an engineering educator with several years of teaching experience at the first-year level. Her research interests include motivation to succeed in engineering with a focus on first-year students. She has work experience in the telecommunications industry.",
-      "Dr. Virgüez holds a Ph.D. in Engineering Education and a Master's degree in Management Systems Engineering from Virginia Tech, and a bachelor's degree in Telecommunications Engineering from the National Experimental University of the Armed Forces in Venezuela. She is a member of the American Society for Engineering Education (ASEE)."
+      "Dr. Lilianny Virgüez is an Associate Instructional Professor in the Department of Engineering Education at the University of Florida Herbert Wertheim College of Engineering. With a Ph.D. in Engineering Education and a professional background in engineering, she is passionate about designing meaningful learning experiences and preparing students for a rapidly evolving technological workforce.",
+      "Her work spans engineering education, curriculum development, online learning, and artificial intelligence in education. Her current scholarship explores how AI can serve as a cognitive partner to support student learning and metacognition, as well as how engineering curricula can better align with emerging workforce needs. She has also held academic leadership roles in undergraduate education and curriculum development, leading and contributing to curricular initiatives at the college and university levels."
     ],
     links: [
       { label: "Faculty profile", url: "https://eed.eng.ufl.edu/people/faculty/name/lilianny-virguez/" }
