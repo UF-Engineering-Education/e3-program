@@ -1588,11 +1588,15 @@ a[target="_blank"]::after {
    11. Workshop series
    -------------------------------------------------------------------------- */
 
-/* One workshop per row: a sticky-feeling date rail on the left, the session
-   itself on the right. Collapses to a single column on narrow screens. */
+/* One workshop per card: the title on the header line with the session number
+   and date as chips beside it, the agenda folded away in a <details> below,
+   and the speakers always on show under it. */
 .workshops {
   display: grid;
   gap: clamp(1.1rem, 2.4vw, 1.6rem);
+  /* Capped so the agenda lines keep a readable measure: at full wrap width the
+     card would set 100-character lines. */
+  max-width: 920px;
   list-style: none;
   margin: 0;
   padding: 0;
@@ -1600,75 +1604,81 @@ a[target="_blank"]::after {
 .workshops > li { margin: 0; }
 
 .workshop {
-  display: grid;
-  grid-template-columns: 148px 1fr;
-  gap: clamp(1.1rem, 3vw, 2rem);
   padding: clamp(1.25rem, 2.6vw, 1.75rem);
   background: #fff;
   border: 1px solid var(--line);
   border-radius: var(--r-lg);
   box-shadow: var(--shadow-sm);
 }
-.workshop--next { border-color: #f6c9b4; }
 
-/* Date rail */
-.workshop__when {
-  border-right: 1px solid var(--line);
-  padding-right: clamp(0.75rem, 2vw, 1.25rem);
+/* Header: numbered title left, date chip right. A long title pushes the chip
+   onto its own row, where `margin-left: auto` keeps it right-aligned rather than
+   snapping to the left edge and making the cards look inconsistent. */
+.workshop__head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0.5rem 1.25rem;
 }
-.workshop__date {
-  display: block;
-  color: var(--ink);
-  font-weight: 800;
-  font-size: 1.5rem;
-  line-height: 1.05;
-  letter-spacing: -0.02em;
-}
-.workshop__month {
-  display: block;
-  color: var(--uf-orange-ink);
-  font-size: 0.72rem;
-  font-weight: 700;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-}
-/* A month whose day is not fixed yet: same rail, smaller and muted, so the
-   scheduled sessions above still read as the firm ones. */
-.workshop__date--tba {
-  font-size: 0.95rem;
-  font-weight: 700;
-  color: var(--ink-3);
-  font-style: italic;
-  letter-spacing: 0;
-}
-.workshop__year {
-  display: block;
-  margin-top: 0.15rem;
-  color: var(--ink-3);
-  font-size: 0.8rem;
-}
-.workshop__num {
-  display: inline-block;
-  margin-top: 0.7rem;
-  padding: 0.15rem 0.5rem;
-  border: 1px solid var(--line-strong);
-  border-radius: 999px;
-  color: var(--ink-3);
-  font-size: 0.66rem;
-  font-weight: 700;
-  letter-spacing: 0.09em;
-  text-transform: uppercase;
-}
-
-/* Session body */
 .workshop__title {
-  margin: 0 0 0.5rem;
+  flex: 1 1 22rem;
+  margin: 0;
   font-size: var(--step-1);
 }
+/* Overrides the .chips top margin: this sits on the title's line, not under it. */
+.workshop__meta {
+  flex: none;
+  margin: 0 0 0 auto;
+  gap: 0.4rem;
+}
+.chip--when {
+  color: var(--ink);
+  font-weight: 600;
+}
+
+/* Collapsed by default: the schedule reads as a list of titles and dates, and
+   only opens up where someone wants the agenda. */
+.workshop__details {
+  margin-top: 1.1rem;
+  border-top: 1px solid var(--line);
+}
+.workshop__details > summary {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.8rem 0 0;
+  color: var(--uf-blue);
+  font-size: 0.88rem;
+  font-weight: 700;
+  cursor: pointer;
+  list-style: none; /* Firefox's default triangle */
+}
+.workshop__details > summary::-webkit-details-marker { display: none; }
+.workshop__details > summary:hover { color: var(--uf-orange-ink); }
+.workshop__details > summary::after {
+  content: "";
+  width: 8px;
+  height: 8px;
+  border-right: 2px solid currentColor;
+  border-bottom: 2px solid currentColor;
+  transform: translateY(-2px) rotate(45deg);
+  transition: transform 0.18s;
+}
+.workshop__details[open] > summary::after {
+  transform: translateY(2px) rotate(225deg);
+}
+.workshop__details > summary:focus-visible {
+  outline: 2px solid var(--uf-blue);
+  outline-offset: 3px;
+  border-radius: var(--r-sm);
+}
+.workshop__body { padding-top: 0.9rem; }
+
 .workshop__intro {
   margin: 0 0 0.9rem;
   color: var(--ink-2);
 }
+.workshop__intro:last-child { margin-bottom: 0; }
 
 /* Agenda / sub-session bullets */
 .workshop__agenda {
@@ -1765,20 +1775,6 @@ a[target="_blank"]::after {
   border-top: 0;
   margin-top: 2rem;
   padding-top: 0;
-}
-
-@media (max-width: 700px) {
-  .workshop { grid-template-columns: 1fr; }
-  .workshop__when {
-    display: flex;
-    align-items: baseline;
-    gap: 0.5rem;
-    border-right: 0;
-    border-bottom: 1px solid var(--line);
-    padding: 0 0 0.75rem;
-  }
-  .workshop__date { font-size: 1.2rem; }
-  .workshop__num { margin-top: 0; margin-left: auto; }
 }
 
 /* --------------------------------------------------------------------------
