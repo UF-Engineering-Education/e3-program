@@ -381,7 +381,7 @@ a[target="_blank"]::after {
 .brand__text { display: grid; line-height: 1.2; }
 .brand__title {
   font-weight: 800;
-  font-size: 0.95rem;
+  font-size: 1.4rem;
   line-height: 1.22;
   max-width: 30ch;
   letter-spacing: -0.01em;
