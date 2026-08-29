@@ -30,7 +30,7 @@
 
     // Keep in step with the nav breakpoint in style.css.
     window.addEventListener("resize", function () {
-      if (window.innerWidth > 1100) {
+      if (window.innerWidth > 1150) {
         nav.classList.remove("is-open");
         toggle.setAttribute("aria-expanded", "false");
       }

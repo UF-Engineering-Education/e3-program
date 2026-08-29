@@ -457,9 +457,9 @@ a[target="_blank"]::after {
 .nav a[aria-current="page"] { color: var(--uf-blue); }
 .nav a[aria-current="page"]::after { background: var(--uf-orange); }
 
-/* Breakpoint sits at 1100px: seven links plus the expanded programme name in
-   the lockup need the room. */
-@media (max-width: 1100px) {
+/* Breakpoint sits at 1150px: eight links plus the expanded programme name in
+   the lockup need the room. Raised from 1100px when Workshops joined the nav. */
+@media (max-width: 1150px) {
   .nav-toggle { display: inline-flex; }
   .nav {
     display: none;
@@ -1585,7 +1585,204 @@ a[target="_blank"]::after {
 }
 
 /* --------------------------------------------------------------------------
-   11. Outcomes
+   11. Workshop series
+   -------------------------------------------------------------------------- */
+
+/* One workshop per row: a sticky-feeling date rail on the left, the session
+   itself on the right. Collapses to a single column on narrow screens. */
+.workshops {
+  display: grid;
+  gap: clamp(1.1rem, 2.4vw, 1.6rem);
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.workshops > li { margin: 0; }
+
+.workshop {
+  display: grid;
+  grid-template-columns: 148px 1fr;
+  gap: clamp(1.1rem, 3vw, 2rem);
+  padding: clamp(1.25rem, 2.6vw, 1.75rem);
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: var(--r-lg);
+  box-shadow: var(--shadow-sm);
+}
+.workshop--next { border-color: #f6c9b4; }
+
+/* Date rail */
+.workshop__when {
+  border-right: 1px solid var(--line);
+  padding-right: clamp(0.75rem, 2vw, 1.25rem);
+}
+.workshop__date {
+  display: block;
+  color: var(--ink);
+  font-weight: 800;
+  font-size: 1.5rem;
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+}
+.workshop__month {
+  display: block;
+  color: var(--uf-orange-ink);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+/* A month whose day is not fixed yet: same rail, smaller and muted, so the
+   scheduled sessions above still read as the firm ones. */
+.workshop__date--tba {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--ink-3);
+  font-style: italic;
+  letter-spacing: 0;
+}
+.workshop__year {
+  display: block;
+  margin-top: 0.15rem;
+  color: var(--ink-3);
+  font-size: 0.8rem;
+}
+.workshop__num {
+  display: inline-block;
+  margin-top: 0.7rem;
+  padding: 0.15rem 0.5rem;
+  border: 1px solid var(--line-strong);
+  border-radius: 999px;
+  color: var(--ink-3);
+  font-size: 0.66rem;
+  font-weight: 700;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+}
+
+/* Session body */
+.workshop__title {
+  margin: 0 0 0.5rem;
+  font-size: var(--step-1);
+}
+.workshop__intro {
+  margin: 0 0 0.9rem;
+  color: var(--ink-2);
+}
+
+/* Agenda / sub-session bullets */
+.workshop__agenda {
+  margin: 0.4rem 0 0;
+  padding: 0;
+  list-style: none;
+}
+.workshop__agenda > li {
+  position: relative;
+  margin: 0 0 0.5rem;
+  padding-left: 1.25rem;
+  font-size: 0.94rem;
+  line-height: 1.55;
+}
+.workshop__agenda > li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.62em;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--uf-blue);
+}
+.workshop__agenda b {
+  color: var(--ink);
+  font-weight: 700;
+}
+
+/* Speaker strip — small round headshots under the session */
+.speakers {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.65rem 1.5rem;
+  list-style: none;
+  margin: 1.1rem 0 0;
+  padding: 0.95rem 0 0;
+  border-top: 1px solid var(--line);
+}
+.speakers > li { margin: 0; }
+
+.speaker {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+}
+.speaker__photo {
+  flex: none;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  overflow: hidden;
+  background: var(--surface-3);
+  border: 1px solid var(--line);
+}
+.speaker__photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 22%;
+}
+/* Same silhouette treatment the fellow cards use, at speaker scale. */
+.speaker__photo--tba {
+  display: grid;
+  place-items: center;
+  background: linear-gradient(150deg, var(--surface-3), #dde4f2);
+  color: #9aa6bd;
+  border-style: dashed;
+  border-color: var(--line-strong);
+}
+.speaker__photo--tba svg { width: 55%; height: 55%; }
+
+.speaker__name {
+  display: block;
+  color: var(--ink);
+  font-weight: 700;
+  font-size: 0.92rem;
+  line-height: 1.3;
+}
+.speaker__role {
+  display: block;
+  color: var(--ink-3);
+  font-size: 0.78rem;
+  line-height: 1.35;
+}
+.speaker__name a { text-decoration: none; }
+.speaker__name a:hover { text-decoration: underline; }
+
+/* Standalone speaker row (the home-page teaser): no session above it to be
+   divided from, so it drops the rule and centres instead. */
+.speakers--center {
+  justify-content: center;
+  gap: 1.1rem 2.25rem;
+  border-top: 0;
+  margin-top: 2rem;
+  padding-top: 0;
+}
+
+@media (max-width: 700px) {
+  .workshop { grid-template-columns: 1fr; }
+  .workshop__when {
+    display: flex;
+    align-items: baseline;
+    gap: 0.5rem;
+    border-right: 0;
+    border-bottom: 1px solid var(--line);
+    padding: 0 0 0.75rem;
+  }
+  .workshop__date { font-size: 1.2rem; }
+  .workshop__num { margin-top: 0; margin-left: auto; }
+}
+
+/* --------------------------------------------------------------------------
+   12. Outcomes
    -------------------------------------------------------------------------- */
 .req {
   display: grid;
@@ -1641,7 +1838,7 @@ a[target="_blank"]::after {
 .placeholder-note strong { color: var(--ink-2); }
 
 /* --------------------------------------------------------------------------
-   12. CTA band
+   13. CTA band
    -------------------------------------------------------------------------- */
 .cta {
   background: var(--uf-blue);
@@ -1731,7 +1928,7 @@ a[target="_blank"]::after {
 }
 
 /* --------------------------------------------------------------------------
-   13. Footer
+   14. Footer
    -------------------------------------------------------------------------- */
 .site-footer {
   background: var(--uf-blue-900);
@@ -1797,7 +1994,7 @@ a[target="_blank"]::after {
 .footer-repo svg { width: 15px; height: 15px; flex: none; }
 
 /* --------------------------------------------------------------------------
-   14. Motion
+   15. Motion
    -------------------------------------------------------------------------- */
 /* Only hide content when JS is confirmed available (the inline snippet in each
    page's <head> sets .js). Without this gate, a failed main.js would leave the
@@ -1826,7 +2023,7 @@ a[target="_blank"]::after {
 }
 
 /* --------------------------------------------------------------------------
-   15. Print
+   16. Print
    -------------------------------------------------------------------------- */
 @media print {
   .site-header, .topbar, .site-footer, .cta, .btn-row, .filters,
