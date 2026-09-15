@@ -175,6 +175,13 @@ a[target="_blank"]::after {
 }
 .section--tight { padding-block: clamp(2.25rem, 5vw, 3.5rem); }
 .section--alt { background: var(--surface-2); }
+/* A section that has to read as a break from what surrounds it: its own surface,
+   distinct from both white and `--alt`, plus an accent rule across the top. The
+   rule matches the 4px orange edge `.card--accent` uses. */
+.section--rule {
+  background: var(--surface-3);
+  border-top: 4px solid var(--uf-orange);
+}
 .section--ink {
   background: var(--uf-blue-900);
   color: rgba(255, 255, 255, 0.82);
@@ -662,6 +669,19 @@ a[target="_blank"]::after {
 }
 .grid--3 { grid-template-columns: repeat(auto-fit, minmax(270px, 1fr)); }
 .grid--4 { grid-template-columns: repeat(auto-fit, minmax(215px, 1fr)); }
+
+/* Five across, stepped down explicitly. auto-fit would fit only four columns at
+   the wrap width and strand the fifth card alone on a second row. */
+.grid--5 { grid-template-columns: repeat(5, minmax(0, 1fr)); }
+@media (max-width: 1100px) {
+  .grid--5 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+}
+@media (max-width: 780px) {
+  .grid--5 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 520px) {
+  .grid--5 { grid-template-columns: 1fr; }
+}
 
 .card {
   display: flex;
@@ -1990,7 +2010,261 @@ a[target="_blank"]::after {
 .footer-repo svg { width: 15px; height: 15px; flex: none; }
 
 /* --------------------------------------------------------------------------
-   15. Motion
+   15. Step timeline
+   The five moves of a mentoring meeting, read left to right: a numbered node
+   per step with a rule running between the nodes.
+   -------------------------------------------------------------------------- */
+.steps__heading { margin-bottom: 0.4rem; }
+
+.steps {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 0 1.25rem;
+  counter-reset: step;
+  list-style: none;
+  margin: 1.75rem 0 0;
+  padding: 0;
+}
+
+.step {
+  position: relative;
+  margin: 0;
+  padding-top: 3.75rem; /* clears the node */
+  counter-increment: step;
+}
+
+.step::before {
+  content: counter(step, decimal-leading-zero);
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: grid;
+  place-items: center;
+  width: 2.75rem;
+  height: 2.75rem;
+  border-radius: 50%;
+  background: var(--uf-blue);
+  color: #fff;
+  font-size: 0.92rem;
+  font-weight: 800;
+  letter-spacing: -0.01em;
+  /* Sits above the connector rule that runs underneath it. */
+  z-index: 1;
+}
+
+/* The connector reaches from this node across the column gap to the next one:
+   the column width, less this node, plus the gap. */
+.step::after {
+  content: "";
+  position: absolute;
+  top: 1.375rem;
+  left: 2.75rem;
+  width: calc(100% - 1.5rem);
+  height: 2px;
+  background: var(--line-strong);
+}
+.step:last-child::after { content: none; }
+
+.step__title {
+  margin: 0 0 0.1rem;
+  font-size: 1.02rem;
+  line-height: 1.25;
+}
+.step__when {
+  margin: 0 0 0.55rem;
+  color: var(--uf-orange-ink);
+  font-size: 0.76rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+.step__text {
+  margin: 0;
+  color: var(--ink-2);
+  font-size: 0.91rem;
+  line-height: 1.55;
+}
+
+/* Below the five-column width the row would squeeze past readability. It
+   reflows into a plain grid, and the connectors go — they would otherwise point
+   off the end of each wrapped row into empty space. */
+@media (max-width: 1080px) {
+  .steps { grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1.75rem 1.25rem; }
+  .step::after { content: none; }
+}
+@media (max-width: 520px) {
+  .steps { grid-template-columns: 1fr; gap: 1.5rem; }
+  .step { padding-top: 0; padding-left: 3.5rem; min-height: 2.75rem; }
+  .step::before { top: -0.15rem; }
+}
+
+/* --------------------------------------------------------------------------
+   16. Mentor worksheets
+   Fillable forms that have to work three ways: typed into on screen, printed
+   blank and written on, and printed after typing as a PDF record.
+   -------------------------------------------------------------------------- */
+.sheet {
+  border-top: 1px solid var(--line);
+}
+.sheet:first-of-type { border-top: 0; }
+
+.sheet__head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 1rem 1.5rem;
+  padding-bottom: 1.1rem;
+  margin-bottom: 1.5rem;
+  border-bottom: 2px solid var(--uf-blue);
+}
+.sheet__head h2 { margin: 0.25rem 0 0.35rem; }
+.sheet__head .eyebrow { margin-bottom: 0; }
+
+.sheet__when {
+  margin: 0;
+  color: var(--ink-3);
+  font-size: var(--step--1);
+  font-weight: 600;
+}
+
+.sheet__print { flex: none; }
+
+.sheet__intro {
+  max-width: 68ch;
+  color: var(--ink-2);
+}
+
+/* Section rules inside a sheet, so a long form still reads as parts. */
+.sheet__section {
+  display: flex;
+  align-items: baseline;
+  gap: 0.75rem;
+  margin: 2.25rem 0 1rem;
+  padding-bottom: 0.4rem;
+  border-bottom: 1px solid var(--line);
+  font-size: var(--step-1);
+}
+.sheet__mins {
+  margin-left: auto;
+  color: var(--ink-3);
+  font-size: var(--step--1);
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+/* Fields ------------------------------------------------------------------ */
+.field { display: grid; gap: 0.35rem; margin: 0 0 1.1rem; }
+
+.field label {
+  color: var(--ink);
+  font-size: 0.94rem;
+  font-weight: 700;
+  line-height: 1.4;
+}
+
+.field__hint {
+  display: block;
+  margin-top: 0.15rem;
+  color: var(--ink-3);
+  font-size: 0.87rem;
+  font-weight: 400;
+  font-style: italic;
+}
+
+.field input[type="text"],
+.field textarea,
+.sheet__table input[type="text"] {
+  width: 100%;
+  padding: 0.55rem 0.7rem;
+  border: 1px solid var(--line-strong);
+  border-radius: var(--r-sm);
+  background: #fff;
+  color: var(--ink);
+  font: inherit;
+  font-size: 0.97rem;
+}
+.field textarea {
+  min-height: 3.2rem;
+  resize: vertical;
+  line-height: 1.55;
+}
+
+.field input[type="text"]:focus,
+.field textarea:focus,
+.sheet__table input[type="text"]:focus {
+  outline: 2px solid var(--uf-blue);
+  outline-offset: 1px;
+  border-color: var(--uf-blue);
+}
+
+.sheet__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 0 1.25rem;
+}
+/* Side-by-side fields whose labels wrap to different line counts would
+   otherwise put their inputs at different heights: pin the label to the top of
+   the cell and the input to the bottom so the row keeps one baseline. */
+.sheet__grid > .field { align-content: space-between; }
+.sheet__grid > .field input[type="text"] { align-self: end; }
+
+.sheet__ol { margin: 0; padding-left: 1.25rem; }
+.sheet__ol > li { margin-bottom: 0.5rem; }
+
+.sheet__sign {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 0 1.25rem;
+  margin-top: 2rem;
+  padding-top: 1.25rem;
+  border-top: 1px solid var(--line);
+}
+
+/* Tables ------------------------------------------------------------------ */
+.sheet__table {
+  width: 100%;
+  margin: 0 0 1.5rem;
+  border-collapse: collapse;
+  table-layout: fixed;
+}
+.sheet__table th {
+  padding: 0 0 0.45rem;
+  color: var(--ink);
+  font-size: 0.9rem;
+  font-weight: 700;
+  text-align: left;
+}
+.sheet__table td { padding: 0 0.4rem 0.5rem 0; vertical-align: top; }
+.sheet__table td:last-child { padding-right: 0; }
+
+/* Action rows: a wide "what", then two narrow columns. */
+.sheet__table th:nth-child(2),
+.sheet__table th:nth-child(3) { width: 22%; }
+/* Observation and evidence rows divide more evenly. */
+.sheet__table--obs th:nth-child(1) { width: 20%; }
+.sheet__table--obs th:nth-child(2),
+.sheet__table--obs th:nth-child(3) { width: 40%; }
+
+@media (max-width: 620px) {
+  .sheet__table,
+  .sheet__table thead,
+  .sheet__table tbody,
+  .sheet__table tr,
+  .sheet__table td { display: block; width: 100%; }
+  .sheet__table thead { display: none; }
+  .sheet__table tr {
+    margin-bottom: 0.9rem;
+    padding-bottom: 0.4rem;
+    border-bottom: 1px solid var(--line);
+  }
+  .sheet__table td { padding: 0 0 0.4rem; }
+}
+
+.sheet-notice { border-left-color: var(--uf-blue); }
+
+/* --------------------------------------------------------------------------
+   17. Motion
    -------------------------------------------------------------------------- */
 /* Only hide content when JS is confirmed available (the inline snippet in each
    page's <head> sets .js). Without this gate, a failed main.js would leave the
@@ -2019,7 +2293,7 @@ a[target="_blank"]::after {
 }
 
 /* --------------------------------------------------------------------------
-   16. Print
+   18. Print
    -------------------------------------------------------------------------- */
 @media print {
   .site-header, .topbar, .site-footer, .cta, .btn-row, .filters,
@@ -2028,4 +2302,43 @@ a[target="_blank"]::after {
   .hero h1, .hero .lede { color: #000; }
   body { color: #000; }
   .gantt { min-width: 0; }
+
+  /* Reveal animates on scroll; anything below the fold is still at opacity 0
+     when the print snapshot is taken, so it would print as blank space. */
+  .js .reveal { opacity: 1 !important; transform: none !important; }
+
+  /* Collapsed sections hold the meeting plans and the question bank — print
+     what they contain rather than a row of summary links. Browsers hide the
+     closed content two different ways, so both are unpicked. */
+  details > *:not(summary) { display: revert !important; }
+  details::details-content { content-visibility: visible !important; }
+
+  /* Worksheets: one sheet per print job, laid out for paper. Empty fields
+     become ruled lines so a blank form can be written on. */
+  .sheet__print, .skip-link, .breadcrumb, .link-row, .sheet-notice { display: none; }
+  .is-printing-one .sheet:not(.is-printing) { display: none; }
+  .is-printing-one .hero { display: none; }
+  .sheet { border-top: 0; page-break-after: always; }
+  .sheet:last-of-type { page-break-after: auto; }
+  .sheet__head { border-bottom: 2px solid #000; }
+  .sheet__section, .field, .sheet__table tr { page-break-inside: avoid; }
+  .field input[type="text"],
+  .sheet__table input[type="text"] {
+    border: 0;
+    border-bottom: 1px solid #999;
+    border-radius: 0;
+    padding: 0.15rem 0.1rem;
+  }
+  .field textarea {
+    border: 0;
+    border-bottom: 1px solid #999;
+    border-radius: 0;
+    padding: 0.15rem 0.1rem;
+    resize: none;
+    /* Printed textareas clip to their box; the script grows filled ones first,
+       and this keeps blank ones a usable writing height. */
+    min-height: 3.6rem;
+    overflow: visible;
+  }
+  .section--tight { padding: 0.5rem 0; }
 }
